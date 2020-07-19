@@ -99,10 +99,15 @@ section h3 {
     gap: 20px;
 }
 
+.prato {
+    cursor: pointer;
+}
+
 .prato img {
     width: 300px;
     height: auto;
     border-radius: 15px;
+    
 }
 .prato h4 {
     font-size: 18px;

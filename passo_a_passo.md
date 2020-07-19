@@ -1,3 +1,13 @@
+<h2 align="center">Sumário</h2>
+ <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+
+ </ul>
+
 ## Iniciando o projeto
 `npm init -y`
 
@@ -42,3 +52,52 @@ Pronto, seu arquivo será atualizado automaticamente após algumas alterações 
 })`
 //primeiro termo: é o caminho (pasta) de onde virão os arquivos "html" ou "njk" (futuramente)
 //segundo termo: opções em formato de objeto, onde será declarado o uso do express e a variável que está sendo usada para tal
+
+## Renderizando index
+onde anteriormente tinhamos o caminho do `server.get("/"`, mostrando o "opa" na tela com o `return res.send("Opa")`, iremos retornar `return res.render("index")` sem ser necessário o".html" no final
+
+## Configurando a pasta public
+Como foi notado anteriormente o css não foi carregado junto ao index.html, isso pq os arquivos estáticos não foram configurados ainda. para isso usamos a seguinte configuração no nosso servidor:
+`server.use(express.static)`
+
+## Configurando demais Rotas no backend e no html
+É necessário observar como estarão os links no html se estão de acordo com backend, tal como o 'hrf' do index será a "/" os demais links iniciaram também com "/".
+
+## Páginas dinâmicas com Nunjucks
+Inicialmente será criado um arquivo na pasta "views", chamada de layout (nome sugerido) a qual será a base de toda aplicação. Em seguida no layout será colado todo conteúdo do index, prferencialmente e apagar todo conteúdo que não se repete nas demais páginas e marcar com um block essas áreas e nomeando-as como no exemplo a seguir.
+`{% block content %}`
+`{% endblock %}`
+
+No início das demais páginas, será implementado um código nunjucks para que este carregue o html previamente montado da página layout.
+`{% extends "layout.html" %}`
+
+No conteúdo que não está no layout, será envolto pela "marcação" do nunjucks que também foi previamente marcado no "layout.html"
+
+Caso queira marcar um conteúdo como padrão se o mesmo não apresentar em alguma página como a tag `<title>`, isso será feito da seguinte forma:
+``` {% block head %}
+        <title>Título Padrão</title>
+    {% endblock %}
+```
+
+## Configurando arquivos .njk
+Para ficar claro e facilitar a visualização no código, vamos configurar no engine para visualizar os arquivos .njk. Para isso vamos configurar nosso servidor que anteriormente estava lendo o html, da seguinte forma:
+`server.set("view engine", "njk")`
+E em seguida renomear os arquivos .html em .njk
+
+## Configuração da extensão Nunjucks Template para o VS Code
+Para a melhor visualização e utilização do html nos arquivos nunjucks vamos configurar da seguinte forma:
+ - ctrl + shift + P
+ - Open settings (JSON)
+ - colar o seguinte código:
+```    "emmet.includeLanguages": {
+        "njk": "html"
+    },
+```
+
+## Importando e exportando do JavaScript
+Crinado um arquivo `data.js` na raiz do projeto, nós criaremos exportamos um array:
+```module.exports = [
+    {
+        id: "Ana"
+        etc:...
+```
