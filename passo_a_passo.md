@@ -101,3 +101,20 @@ Crinado um arquivo `data.js` na raiz do projeto, nós criaremos exportamos um ar
         id: "Ana"
         etc:...
 ```
+
+## Passando os dados para o Frontend
+Após criar o array com os dados, é necessário importar o mesmo para o backend, fazendo uma requisição e guardando em uma variável.
+`const data = require("./data")`
+
+Em seguida, é enviada essa array "na rota" da página que usará esses dados. No exemplo a seguir, o nome da página será "home".
+```server.get("/", function(req, res) {
+    return res.render('home', {datas})
+```
+E por fim são passados as variáveis pelo Nunjucks e utilizando um laço, caso tenhmos a necessidade. No exemplo a seguir contiuaremos com a lógica na qual o array que foi passado anteriormente foi chamado de `datas`.
+```
+{% for data in datas %}
+<div class="prato">
+    <img src="assets/{{data.img}}.png" alt="{{data.title}}">
+```
+
+## Página de conteúdo Único

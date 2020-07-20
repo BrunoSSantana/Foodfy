@@ -16,43 +16,14 @@
                 <h3>Mais acessadas</h3>
 
                 <div class="pratos">
-
-                    <div class="prato">
-                        <img src="assets/burger.png" alt="burger">
-                        <h4 class="nome-do-prato" >Triplo bacon burger</h4>
-                        <p class="chef" >por Jorge Relato</p>
-                    </div>
-
-                    <div class="prato">
-                        <img src="assets/pizza.png" alt="pizza">
-                        <h4 class="nome-do-prato" >Pizza 4 estações</h4>
-                        <p class="chef" >Por Fabiana Melo</p>
-                    </div>
-
-                    <div class="prato">
-                        <img src="assets/espaguete.png" alt="espaguete">
-                        <h4 class="nome-do-prato" >Espaguete ao molho</h4>
-                        <p class="chef" >por Júlia Kinoto</p>
-                    </div>
-
-                    <div class="prato">
-                        <img src="assets/lasanha.png" alt="lasanha">
-                        <h4 class="nome-do-prato" >Lasanha mac n' cheese</h4>
-                        <p class="chef"> por Juliano Vieira</p>
-                    </div>
-
-                    <div class="prato">
-                        <img src="assets/doce.png" alt="doce">
-                        <h4 class="nome-do-prato" >Docinhos pão-do-céu</h4>
-                        <p class="chef" >por Ricardo Golvea</p>
-                    </div>
-
-                    <div class="prato">
-                        <img src="assets/asinhas.png" alt="asinha de frango">
-                        <h4 class="nome-do-prato" >Asinhas de frango ao barbecue</h4>
-                        <p class="chef" >por Vania Steroski</p>
-                    </div>
-
+                    {% for data in datas %}
+                        <div class="prato" id="{{data.title}}">
+                            <img src="{{data.image}}" alt="{{data.title}}">
+                            <h4 class="nome-do-prato" >{{data.title}}</h4>
+                            <p class="chef" >pelo chef, {{data.author}}</p>
+                        </div>
+                    {% endfor %}
+                    
                 </div>
 
             </div>

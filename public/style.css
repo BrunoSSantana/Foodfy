@@ -105,8 +105,9 @@ section h3 {
 
 .prato img {
     width: 300px;
-    height: auto;
+    height: 140px;
     border-radius: 15px;
+    object-fit: cover;
     
 }
 .prato h4 {
@@ -241,4 +242,53 @@ footer {
     font-weight: 400;
     font-size: 18px;
     color: #777777;
+}
+/* Page da Receita */
+.banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.banner img {
+    width: 940px;
+    height: 280px;
+}
+.banner h4 {
+    margin-top: 50px;
+    font-size: 36px;
+    font-weight: 700;
+}
+.banner p {
+    margin-top: 4px;
+    font-size: 20px;
+}
+.description {
+    width: 940px;
+}
+
+.description h5 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.description p {
+    font-size: 18px;
+    font-weight: 400;
+    color: #444444;
+}
+
+.partial {
+    display: flex;
+}
+.partial button {
+    margin-left: 8px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    background-color: white;
+    color: #999999;
+    border: none;
+    justify-content: center;
+    cursor: pointer;
 }
