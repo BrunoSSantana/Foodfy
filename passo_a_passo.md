@@ -1,24 +1,22 @@
 <h2 align="center">Sumário</h2>
  <ul>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-
+    <li> [Iniciando o Projeto](#iniciando-o-projeto) </li>
+    <li> [Instalando o Nunjucks](#instalando-o-nunjucks) </li>
+    <li> [Páginas Dinâmicas com Nunjucks](#section) </li>
+    <li> [Importando e Exportando do JavaScript](#importando-e-exportando-do-javascript) </li>
  </ul>
 
 ## Iniciando o projeto
 `npm init -y`
 
-neste passo será criado um arquivo, chamado `package.json`
+neste passo será criado um arquivo, chamado `package.json`.
 
-## Instalando o express
+### Instalando o express
 `npm install express`
 
 agora irá aparecer uma pasta chamada, "node_modules".
 
-## Criando e iniciando um servidor utilizando express
+### Criando e iniciando um servidor utilizando express
 `const express = require('express')` Importand o express  no seervidor
 
 `const server = express()` Executando o Express
@@ -27,12 +25,12 @@ agora irá aparecer uma pasta chamada, "node_modules".
     console.log('server is runing')     //receberá alteração
 })`
 
-## Criando rotas 
+### Criando rotas 
 `server.get("/", function(req, res) {
     return res.send("Opa")              //receberá alteração
 })`
 
-## Instlando Nodemon
+### Instlando Nodemon
 `npm install -D nodemon`
 
 Em seguida ir até o arquivo package.json e alterar o script, start para "nodemon server.js"
@@ -42,7 +40,7 @@ Pronto, seu arquivo será atualizado automaticamente após algumas alterações 
 ## Instalando o Nunjucks
 `npm install nunjucks`
 
-## Configurando a template engine
+### Configurando a template engine
 `const nunjucks = require('nunjucks')` importando o nunjucks
 
 `server.set("view engine", "html")` setando a template engine para visualizar os arquivos html
@@ -53,17 +51,17 @@ Pronto, seu arquivo será atualizado automaticamente após algumas alterações 
 //primeiro termo: é o caminho (pasta) de onde virão os arquivos "html" ou "njk" (futuramente)
 //segundo termo: opções em formato de objeto, onde será declarado o uso do express e a variável que está sendo usada para tal
 
-## Renderizando index
+### Renderizando index
 onde anteriormente tinhamos o caminho do `server.get("/"`, mostrando o "opa" na tela com o `return res.send("Opa")`, iremos retornar `return res.render("index")` sem ser necessário o".html" no final
 
-## Configurando a pasta public
+### Configurando a pasta public
 Como foi notado anteriormente o css não foi carregado junto ao index.html, isso pq os arquivos estáticos não foram configurados ainda. para isso usamos a seguinte configuração no nosso servidor:
 `server.use(express.static)`
 
-## Configurando demais Rotas no backend e no html
+### Configurando demais Rotas no backend e no html
 É necessário observar como estarão os links no html se estão de acordo com backend, tal como o 'hrf' do index será a "/" os demais links iniciaram também com "/".
 
-## Páginas dinâmicas com Nunjucks
+## <a name=“section”><a/> Páginas Dinâmicas com Nunjucks
 Inicialmente será criado um arquivo na pasta "views", chamada de layout (nome sugerido) a qual será a base de toda aplicação. Em seguida no layout será colado todo conteúdo do index, prferencialmente e apagar todo conteúdo que não se repete nas demais páginas e marcar com um block essas áreas e nomeando-as como no exemplo a seguir.
 `{% block content %}`
 `{% endblock %}`
@@ -79,12 +77,12 @@ Caso queira marcar um conteúdo como padrão se o mesmo não apresentar em algum
     {% endblock %}
 ```
 
-## Configurando arquivos .njk
+### Configurando arquivos .njk
 Para ficar claro e facilitar a visualização no código, vamos configurar no engine para visualizar os arquivos .njk. Para isso vamos configurar nosso servidor que anteriormente estava lendo o html, da seguinte forma:
 `server.set("view engine", "njk")`
 E em seguida renomear os arquivos .html em .njk
 
-## Configuração da extensão Nunjucks Template para o VS Code
+### Configuração da extensão Nunjucks Template para o VS Code
 Para a melhor visualização e utilização do html nos arquivos nunjucks vamos configurar da seguinte forma:
  - ctrl + shift + P
  - Open settings (JSON)
@@ -94,7 +92,7 @@ Para a melhor visualização e utilização do html nos arquivos nunjucks vamos 
     },
 ```
 
-## Importando e exportando do JavaScript
+## Importando e Exportando do JavaScript
 Crinado um arquivo `data.js` na raiz do projeto, nós criaremos exportamos um array:
 ```module.exports = [
     {
@@ -102,7 +100,7 @@ Crinado um arquivo `data.js` na raiz do projeto, nós criaremos exportamos um ar
         etc:...
 ```
 
-## Passando os dados para o Frontend
+### Passando os dados para o Frontend
 Após criar o array com os dados, é necessário importar o mesmo para o backend, fazendo uma requisição e guardando em uma variável.
 `const data = require("./data")`
 
