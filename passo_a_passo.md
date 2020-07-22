@@ -1,10 +1,12 @@
 <h2 align="center">Sumário</h2>
- <ul>
-    <li> [Iniciando o Projeto](#iniciando-o-projeto) </li>
-    <li> [Instalando o Nunjucks](#instalando-o-nunjucks) </li>
-    <li> [Páginas Dinâmicas com Nunjucks](#section) </li>
-    <li> [Importando e Exportando do JavaScript](#importando-e-exportando-do-javascript) </li>
- </ul>
+
+ - [Iniciando o Projeto](#iniciando-o-projeto)
+ 
+ - [Instalando o Nunjucks](#instalando-o-nunjucks)
+ 
+ - [Páginas Dinâmicas com Nunjucks](#section)
+ 
+ - [Importando e Exportando do JavaScript](#importando-e-exportando-do-javascript)
 
 ## Iniciando o projeto
 `npm init -y`
@@ -61,7 +63,7 @@ Como foi notado anteriormente o css não foi carregado junto ao index.html, isso
 ### Configurando demais Rotas no backend e no html
 É necessário observar como estarão os links no html se estão de acordo com backend, tal como o 'hrf' do index será a "/" os demais links iniciaram também com "/".
 
-## <a name=“section”><a/> Páginas Dinâmicas com Nunjucks
+## <a name='section'><a/>Páginas Dinâmicas com Nunjucks
 Inicialmente será criado um arquivo na pasta "views", chamada de layout (nome sugerido) a qual será a base de toda aplicação. Em seguida no layout será colado todo conteúdo do index, prferencialmente e apagar todo conteúdo que não se repete nas demais páginas e marcar com um block essas áreas e nomeando-as como no exemplo a seguir.
 `{% block content %}`
 `{% endblock %}`
