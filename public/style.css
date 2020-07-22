@@ -253,6 +253,7 @@ footer {
 .banner img {
     width: 940px;
     height: 280px;
+    border-radius: 15px;
 }
 .banner h4 {
     margin-top: 50px;
@@ -280,6 +281,7 @@ footer {
 
 .partial {
     display: flex;
+    flex-direction: column;
 }
 .partial button {
     margin-left: 8px;
@@ -291,4 +293,24 @@ footer {
     border: none;
     justify-content: center;
     cursor: pointer;
+}
+
+.head {
+    display: flex;
+    align-items: baseline;
+}
+.button {
+    height: 28px;
+}
+
+ul {
+    line-height: 28px;
+}
+li {
+    margin-left: 15px;
+}
+
+.displayNone {
+    display: none;
+    transition: all 2s;
 }

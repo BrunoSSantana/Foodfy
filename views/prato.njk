@@ -11,24 +11,32 @@
         <p class="chef">por {{receita.author}}</p>
         <div class="description">
 
-            <div id="ingredientes" class="partial">
-                <h5>Ingredientes</h5><button class="button">mostrar</button>
-            
-                <ul>
+            <div class="partial">
+                <div class="head">
+                    <h5>Ingredientes</h5><button id="ingredientes" class="button">mostrar</button>
+                </div>
+
+                <a id="ingredientes"><p><ul>
                     {% for item in receita.ingredients %}
                         <li>{{item}}</li>
                     {% endfor %}
-                </ul>
+                </ul></a>
             </div>
 
-            <div id="mod" class="partial">
-                <h5>Modo de preparo</h5><button class="button">mostrar</button>
-                <p>{{receita.preparation}}</p>
+            <div class="partial">
+                <div class="head">
+                    <h5>Modo de preparo</h5><button id="mod" class="button">mostrar</button>
+                </div>
+
+                <a id="mod"><p>{{receita.preparation}}</p></a>
             </div>
 
-            <div id="infos" class="partial">
-                <h5>Informações Adicinais</h5><button class="button">mostrar</button>
-                <p>{{receita.information}}</p>
+            <div class="partial">
+                <div class="head">
+                    <h5>Informações Adicinais</h5><button id="infos" class="button">mostrar</button>
+                </div>
+                
+                <a id="infos"><p>{{receita.information}}</p></a>
             </div>
 
         </div>

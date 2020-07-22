@@ -78,11 +78,17 @@ for (let button of buttons) {
     }
   })
 }
-//ocultar
+//Ocultar informações
+
+
 
 for (let button of buttons) {
     button.addEventListener("click", function() {
-        
+        const id = button.getAttribute("id")
+        const info = document.querySelector(`.partial a#${id}`)
+                info.classList.toggle('displayNone')
+        //console.log(id)
+        console.log(info)    
     })
 }
 
