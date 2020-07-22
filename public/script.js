@@ -1,22 +1,27 @@
+
 const modalOverlay = document.querySelector('.modal-overlay')
 
 const pratos = document.querySelectorAll('.prato')
 
 /*=== ATIVAR MODAL ===*/
+
 /* for (let prato of pratos) {
     prato.addEventListener("click", function () {
         modalOverlay.classList.add('active')
     })
 } */
+
 /* --------------------------------------------- */
 
 /*=== FECHAR MODAL=== */
+
 /* document.querySelector(".close-modal").addEventListener("click", function () {
     modalOverlay.classList.remove('active')
 }) */
+
 /* ---------------------------------------------- */
 
-/* ADICIONAR INFOS NO MODAL */
+/* === ADICIONAR INFOS NO MODAL === */
 
 /* for (let prato of pratos) {
     const imgModal = document.querySelector(" .modal-overlay .modal .modal-content img")
@@ -56,6 +61,28 @@ for ( let prato of pratos) {
         const receita = prato.getAttribute("id")
         window.location.href = `/receitas/${receita}`
         console.log("OPA")
+    })
+}
+
+/* Partial */
+const buttons = document.querySelectorAll('.partial button')
+//Mudar o nome 
+for (let button of buttons) {
+  button.addEventListener("click", function() {
+    const text = button.textContent
+
+    if (text == 'mostrar') {
+        button.innerHTML = 'ocultar'
+    } else {
+        button.innerHTML = 'mostrar'
+    }
+  })
+}
+//ocultar
+
+for (let button of buttons) {
+    button.addEventListener("click", function() {
+        
     })
 }
 

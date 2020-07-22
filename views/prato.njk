@@ -10,29 +10,27 @@
         <h4 class="nome-do-prato" >{{receita.title}}</h4>
         <p class="chef">por {{receita.author}}</p>
         <div class="description">
-            <div class="partial">
-                <h5>Ingredientes</h5><button class="button">status</button>
-            </div>        
-            <ul>
-                {% for item in receita.ingredients %}
-                    <li>{{item}}</li>
-                {% endfor %}
-            </ul>
-            
-            <div class="partial">
-                <h5>Modo de preparo</h5><button class="button">status</button>
-            </div>
-            <p>{{receita.preparation}}</p>
 
-            <div class="partial">
-                <h5>Informações Adicinais</h5><button class="button">status</button>
+            <div id="ingredientes" class="partial">
+                <h5>Ingredientes</h5><button class="button">mostrar</button>
+            
+                <ul>
+                    {% for item in receita.ingredients %}
+                        <li>{{item}}</li>
+                    {% endfor %}
+                </ul>
             </div>
-            <p>{{receita.information}}</p>
+
+            <div id="mod" class="partial">
+                <h5>Modo de preparo</h5><button class="button">mostrar</button>
+                <p>{{receita.preparation}}</p>
+            </div>
+
+            <div id="infos" class="partial">
+                <h5>Informações Adicinais</h5><button class="button">mostrar</button>
+                <p>{{receita.information}}</p>
+            </div>
 
         </div>
     </div>
-{% endblock %}
-
-{% block script %}
-    <script src="partial.js"></script>
 {% endblock %}
