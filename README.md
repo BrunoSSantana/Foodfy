@@ -20,22 +20,27 @@
   <a href="#tecnologias">Tecnologias</a>
 </p>
 
-## O Projeto
+## 🗞 O Projeto
 A ideia principal deste projeto é disponibilizar diversas receitas caseiras e até mesmo por profissionais para o público em geral de forma gratuita, apenas pelo simples fato de compartilhas ideias e conhecimentos.
 
-## <a name="introduction"></a> Introdução
-O intuito inicial é cadastrar receitas com os indredintes, modo de preparo, uma foto com a representação do prato feito e algumas informações adicionais, como informações específicas de preparo da receita, além do nome do autor, ainad que este seja fictício.
+## <a name="introduction"></a>📖 Introdução
+O intuito inicial é cadastrar receitas com os ingredintes, modo de preparo, uma foto com a representação do prato feito e algumas informações adicionais, como informações específicas de preparo da receita, além do nome do autor, ainda que este seja fictício.
 
-## Tecnologias
+## 💻 Tecnologias
 Até o presente momento foram usadas as seguintes tecnologias para a elaboradas deste projeto:
 * HTML
 * CSS
 * JavaScript
+* Node
+* Express
+* Nunjucks
 
-## Launch
-Atualmente ainda não é possível realizar o cadastro de receitas, toda via, a ideia para a realização futura, não será necessário nem um cadastramento prévio na plataforma, apenas disponibilizar a receita com ingredientes,  modo de preparo, foto, e identificação do autor.
+## 🚀 Launch
+Atualmente ainda não é possível realizar o cadastro de receitas, toda via, a ideia para a realização futura, será obrigatório o cadastramento prévio na plataforma, antes de disponibilizar a receita com os ingredientes,  modo de preparo, foto, e identificação do autor.
 
 <p align="center" > <em> Estado atual da aplicação</em></p>:
-<img alt="app.Foodfy" src="https://github.com/BrunoSSantana/Foodfy/blob/master/assets/foodfy.gif"></img>
+<img alt="app.Foodfy" src="https://media.giphy.com/media/XBuOBRxlEZAB35R13d/giphy.gif"></img>
 
+## 🧾 LICENÇA
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](/LICENSE) para mais detalhes.
 ***
