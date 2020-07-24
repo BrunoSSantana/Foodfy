@@ -38,8 +38,8 @@ Até o presente momento foram usadas as seguintes tecnologias para a elaboradas 
 ## 🚀 Launch
 Atualmente ainda não é possível realizar o cadastro de receitas, toda via, a ideia para a realização futura, será obrigatório o cadastramento prévio na plataforma, antes de disponibilizar a receita com os ingredientes,  modo de preparo, foto, e identificação do autor.
 
-<p align="center" > <em> Estado atual da aplicação</em></p>:
-<img alt="app.Foodfy" src="https://media.giphy.com/media/XBuOBRxlEZAB35R13d/giphy.gif"></img>
+<p align="center" > <em> Estado atual da aplicação</em></p>
+<p align="center" ><img alt="app.Foodfy" src="https://media.giphy.com/media/XBuOBRxlEZAB35R13d/giphy.gif"></img></p>
 
 ## 🧾 LICENÇA
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](/LICENSE) para mais detalhes.
