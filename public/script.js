@@ -1,7 +1,4 @@
-
 const modalOverlay = document.querySelector('.modal-overlay')
-
-const pratos = document.querySelectorAll('.prato')
 
 /*=== ATIVAR MODAL ===*/
 
@@ -56,6 +53,8 @@ for (let prato of pratos) {
 } */
 
 //REDIRECIONAMENTO
+const pratos = document.querySelectorAll('.prato')
+
 for ( let prato of pratos) {
     prato.addEventListener("click", function () {
         const receita = prato.getAttribute("id")
@@ -64,9 +63,11 @@ for ( let prato of pratos) {
     })
 }
 
-/* Partial */
+//PARTIAL
 const buttons = document.querySelectorAll('.partial button')
+
 //Mudar o nome 
+
 for (let button of buttons) {
   button.addEventListener("click", function() {
     const text = button.textContent
@@ -80,15 +81,12 @@ for (let button of buttons) {
 }
 //Ocultar informações
 
-
-
 for (let button of buttons) {
     button.addEventListener("click", function() {
         const id = button.getAttribute("id")
         const info = document.querySelector(`.partial a#${id}`)
-                info.classList.toggle('displayNone')
+        info.classList.toggle('displayNone')
         //console.log(id)
         console.log(info)    
     })
 }
-

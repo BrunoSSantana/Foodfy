@@ -118,3 +118,73 @@ E por fim são passados as variáveis pelo Nunjucks e utilizando um laço, caso 
 ```
 
 ## Página de conteúdo Único
+Nessa parte vamos destacar três pontos:
+- Redirecionamento para a página
+- Backend
+- A página
+
+### Redirecioamento
+Para a realização do redirecionamento da página primeiro será criada uma const na qual serão selecionados todos os cards com os 'pratos' da seguinte forma: `const pratos = document.querySelectorAll('.prato')`, onde a classe `.prato` foi adicionada aos cards com as receitas.
+Em seguida, aplicasse um 'for of' e adcionando um evento de "click" a cada elemento, em seguida, criando uma const na ual será armazenada o "id" do elemento clicado e posteriormente aplicando um redirecionamento da página e enviando o "id" como "parametro".
+```
+for ( let prato of pratos) {
+    prato.addEventListener("click", function () {
+        const receita = prato.getAttribute("id")
+        window.location.href = `/receitas/${receita}`
+        console.log("OPA")
+    })
+}
+```
+### Backend
+Aqui a ideia será de isolar o id gerado após o redirecionamento gerado do click do card específico como foi tratado anteriormente. Em seguida comparar se existe a id no array de data.js e armaznando ele em uma constante e enviando a mesma para a página que será renderizada o prato, como mostra no código abaixo.
+```
+server.get("/receitas/:id", function(req, res) {
+    const id = req.params.id
+
+    const receita = datas.find( function(receita) {
+        if(receita.id == id){
+            return true
+        } else if(!receita){
+            return res. send(`Receita nã encontrada`)
+        }
+    })
+    return res.render("prato", {receita})
+})
+```
+
+### Página
+Na página que será renderizado os dados do prato selecionado não terá maiores novidades do que já foi visto até agora, apenas fcar atendo do for do nunjucks para renderizar todos os dados da lista de ingredientes.
+
+## Ocultar e Mostrar Conteúdo
+Dois pontos foram tratados separadamente neste ponto, o de mudança de 'OCULTAR' para 'MOSTRAR' e "ocultamento" do conteúdo propriamente dito.
+Para a resolução do primeiro tópico foi realizado um lógica mais simples, toda via, para em ambos usou-se a seleção dos botões em uma constante.
+### Mudando o Nome
+Após a seleção dos botões, realizou-se um "for of" separando cada botão e adicionando um um evento ao clicar, armazenando o teto do botão em uma constante e em seguida adicionado um if ao algoritmo para mudao o nome de 'OCULTAR' para 'MOSTRAR' e vice-versa, como mostrar no código a seguir.
+```
+const buttons = document.querySelectorAll('.partial button')
+
+for (let button of buttons) {
+  button.addEventListener("click", function() {
+    const text = button.textContent
+
+    if (text == 'mostrar') {
+        button.innerHTML = 'ocultar'
+    } else {
+        button.innerHTML = 'mostrar'
+    }
+  })
+}
+```
+### Oculrar e Mostrar Conteúdo
+De início foi preciso adicionar um id no botão e no conteúdo que o mesmo futuramente iria ocultar iguais. Passado essa parte. o incício dessa lógica é semelhante ao anterior, adicionando um evento ao botão clicado, é gerado uma constante que armazena o id do botão clicado e selecionado em seguida  a tag (texto) com a mesma id adicionando e removendo uma `class` com `display: hiden;`, da seguinte forma.
+```
+for (let button of buttons) {
+    button.addEventListener("click", function() {
+        const id = button.getAttribute("id")
+        const info = document.querySelector(`.partial a#${id}`)
+        info.classList.toggle('displayNone')
+        //console.log(id)
+        console.log(info)    
+    })
+}
+```
