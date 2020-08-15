@@ -314,3 +314,28 @@ li {
     display: none;
     transition: all 2s;
 }
+
+/* >==> Admin Style <==< */
+
+.content-admin {
+    width: 100vw;
+    min-height: 100vh;
+    
+}
+.header {
+    display: block;
+    background-color: #111111;
+}
+.header img {
+    padding: 25px 230px;
+}
+.content-body {
+    margin: 0 230px 0 230px;
+}
+.content-body h2 {
+    margin-left: 0;
+}
+.content-body .content-header {
+    display: flex;
+    justify-content: space-between;
+}
