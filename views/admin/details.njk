@@ -1,0 +1,50 @@
+{% extends "admin/layout.njk" %}
+
+{% block headAdmin %}
+    <title>Details</title>
+{% endblock %}
+
+{% block contentAdmin %}
+<div class="banner details">
+    <div>
+        <h5>Receita: Bolo de Chocolate</h5>
+        <button>Editar</button>
+
+    </div>
+    <img src="https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/receitas/burger.png" alt="{{receita.title}}">
+    <h4 class="nome-do-prato" >Bolo de Chocolate</h4>
+    <p class="chef">por Bruno Santana</p>
+    
+    <div class="description">
+
+        <div class="partial">
+            <div class="head">
+                <h5>Ingredientes</h5>
+            </div>
+
+            <a id="ingredientes"><p><ul>
+                {% for item in receita.ingredients %}
+                    <li>{{item}}</li>
+                {% endfor %}
+            </ul></a>
+        </div>
+
+        <div class="partial">
+            <div class="head">
+                <h5>Modo de preparo</h5>
+            </div>
+
+            <a id="mod"><p>{{receita.preparation}}</p></a>
+        </div>
+
+        <div class="partial">
+            <div class="head">
+                <h5>Informações Adicinais</h5>
+            </div>
+
+            <a id="infos"><p>{{receita.information}}</p></a>
+        </div>
+
+    </div>
+    </div>
+{% endblock contentAdmin %}

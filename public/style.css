@@ -317,7 +317,7 @@ li {
 }
 
 /* >==> Admin Style <==< */
-
+/* Create and Edit */
 /* header */
 
 .header {
@@ -357,6 +357,8 @@ li {
 .more-infotmations input {
     height: 257px;
 }
+
+.details.banner button,
 .content-body button {
     background-color: #6558C3;
     border: none;
@@ -373,4 +375,18 @@ li {
 .input {
     display: flex;
     flex-direction: column;
+}
+/* Details */
+.details.banner div:first-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 940px;
+}
+.details.banner h5 {
+    font-size: 24px;
+    margin: 55px 0 24px;
+}
+.details.banner button {
+    height: 35px;
 }

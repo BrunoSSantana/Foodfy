@@ -23,7 +23,7 @@ exports.about = function(req, res) {
 }
 
 exports.create = function(req, res) {
-    return res.render('admin/create')
+    return res.render('admin/listing')
 }
 exports.post = function(req, res) {
     return res.render('home', {data: datas})
