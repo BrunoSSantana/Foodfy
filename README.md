@@ -1,3 +1,6 @@
+![](https://img.shields.io/badge/license-MIT-brightgreen?style=flat-square)
+![](https://img.shields.io/badge/by-BrunoSSantana-brightgreen?style=flat-square)
+[![](https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555)](https://www.linkedin.com/in/bruno-santanas/)
 
 <h1 align="center">
     <img alt="Foodfy" src="public/assets/logo.png"/>
@@ -5,14 +8,6 @@
 
 > The Best Recipes Near You
 ---
-
-<p align="center">
-  
-  <img alt="Made by BrunoSSantana" src="https://img.shields.io/badge/by-BrunoSSantana-bri">
-
-</p>
-
-
 
 <p align="center">
   <a href="#o-projeto">Projeto</a> |  
