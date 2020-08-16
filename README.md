@@ -1,6 +1,6 @@
 
 <h1 align="center">
-    <img alt="Foodfy" src="https://github.com/BrunoSSantana/Foodfy/blob/master/assets/logo.png"/>
+    <img alt="Foodfy" src="public/assets/logo.png"/>
 </h1>
 
 > The Best Recipes Near You
