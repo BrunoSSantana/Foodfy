@@ -1,0 +1,38 @@
+{% extends "admin/layout.njk" %}
+{% block head %}
+    <title>Edition</title>
+{% endblock %}
+
+{% block contentAdmin %}
+    <form class="content-body">
+        <div class="content-header">
+            <h2>Criando Receita</h2>
+            <button type="submit">Salvar receita</button>
+        </div>
+
+        <div class="content-input">
+
+            <div class="input">
+                <h3>Imagem da Receita</h3>
+                <input type="text" name="">
+            </div>
+
+            <div class="input">
+                <h3>Ingredientes</h3>
+                <input type="text" name="" >
+                <span>Adicionar novo ingrediente</span>
+            </div>
+
+            <div class="input">
+                <h3>Modo de preparo</h3>
+                <input type="text" name="" >
+                <span>Adicionar novo passo</span>
+            </div>
+
+            <div class="input more-infotmations">
+                <h3>Informações Adicionais</h3>
+                <input type="text" name="" >
+            </div>
+        </div>
+    </form>
+{% endblock %}

@@ -23,13 +23,13 @@ exports.about = function(req, res) {
 }
 
 exports.create = function(req, res) {
-    return res.render('create')
+    return res.render('admin/create')
 }
 exports.post = function(req, res) {
     return res.render('home', {data: datas})
 }
 exports.edit =function(req, res) {
-    return res.render('home', {data: datas})
+    return res.render('admin/edition', {data: datas})
 }
 exports.put =function(req, res) {
     return res.render('home', {data: datas})

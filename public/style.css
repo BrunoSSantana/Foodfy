@@ -6,6 +6,7 @@
     box-sizing: border-box;
     font-family: Roboto, sans-serif;
 }
+
 /* ===HEADER=== */
 header {
     display: flex;
@@ -317,25 +318,59 @@ li {
 
 /* >==> Admin Style <==< */
 
-.content-admin {
-    width: 100vw;
-    min-height: 100vh;
-    
-}
+/* header */
+
 .header {
     display: block;
     background-color: #111111;
 }
-.header img {
-    padding: 25px 230px;
+.header div {
+    width: 940px;
+    margin: 0 auto;
 }
+.header img {
+    margin: 25px auto;
+}
+/* corpo */
 .content-body {
-    margin: 0 230px 0 230px;
+    margin: 55px auto;
+    max-width: 940px;
 }
 .content-body h2 {
     margin-left: 0;
 }
+.content-body h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.content-body span {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #6558C3;
+}
+.content-body input {
+    height: 49px;
+}
+.more-infotmations input {
+    height: 257px;
+}
+.content-body button {
+    background-color: #6558C3;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-weight: bold;
+    color: white;
+}
 .content-body .content-header {
     display: flex;
     justify-content: space-between;
+}
+.content-body,
+.input {
+    display: flex;
+    flex-direction: column;
 }

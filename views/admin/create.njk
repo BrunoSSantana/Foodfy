@@ -1,27 +1,38 @@
-{% extends "layout.njk" %}
+{% extends "admin/layout.njk" %}
 
     {% block head %}
         <title>Create</title>
     {% endblock %}
     
-    {% block content %}
+    {% block contentAdmin %}
         <form class="content-body">
             <div class="content-header">
-                <h2>Imagem da receita</h2>
+                <h2>Criando Receita</h2>
                 <button type="submit">Salvar receita</button>
             </div>
             <div class="content-input">
-                <div class="input-image">
-                    <h2>Ingredientes</h2>
-                    <input type="text" name="" id="">
-                    <button>Adicionar novo ingrediente</button>
+
+                <div class="input">
+                    <h3>Imagem da Receita</h3>
+                    <input type="text" name="">
                 </div>
-                <div class="input-ingredientes">
-                    <h2>Modo de preparo</h2>
-                    <input type="text" name="" id="">
-                    <button>Adicionar novo passo</button>
+
+                <div class="input">
+                    <h3>Ingredientes</h3>
+                    <input type="text" name="" >
+                    <span>Adicionar novo ingrediente</span>
                 </div>
-                <input type="text" name="" id="">
+
+                <div class="input">
+                    <h3>Modo de preparo</h3>
+                    <input type="text" name="" >
+                    <span>Adicionar novo passo</span>
+                </div>
+
+                <div class="input more-infotmations">
+                    <h3>Informações Adicionais</h3>
+                    <input type="text" name="" >
+                </div>
             </div>
         </form>
     {% endblock %}
