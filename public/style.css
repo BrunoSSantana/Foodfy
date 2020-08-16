@@ -390,3 +390,45 @@ li {
 .details.banner button {
     height: 35px;
 }
+/* listing */
+
+.listing {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 940px;
+    margin: 0 auto;
+    gap: 20px;
+}
+.manager {
+    width: 940px;
+    margin: 0 auto;
+}
+.manager h2 {
+    margin: 50px 0 30px;
+}
+.recipe {
+    display: grid;
+    grid-template-columns: 170px 1fr;
+    gap: 20px;
+}
+.listing .recipe img {
+    width: 170px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8.5px;
+}
+
+.recipe h3 {
+    font-size: 18px;
+}
+.recipe p {
+    font-size: 14px;
+    font-weight: normal;
+    color: #777777;
+}
+.recipe a {
+    font-size: 14px;
+    font-weight: bold;
+    color: #6558C3;
+    text-decoration: none;
+}
