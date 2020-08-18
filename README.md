@@ -30,6 +30,22 @@ Até o presente momento foram usadas as seguintes tecnologias para a elaboradas 
 * Express
 * Nunjucks
 
+## :arrow_down: Como instalar o projeto
+ ```bash
+    #clonando o repositório
+    $ gitclone https://github.com/BrunoSSantana/Launchbase-Rocketseat-Desafio-4-Controle-de-Academia/
+    
+    #entrando o repositório
+    cd Launchbase-Rocketseat-Desafio-4-Controle-de-Academia
+    
+    #instalando os módulos
+    npm install
+    
+    #iniciando a aplicação
+    npm start
+    
+ ```
+
 ## 🚀 Launch
 Atualmente ainda não é possível realizar o cadastro de receitas, toda via, a ideia para a realização futura, será obrigatório o cadastramento prévio na plataforma, antes de disponibilizar a receita com os ingredientes,  modo de preparo, foto, e identificação do autor.
 
