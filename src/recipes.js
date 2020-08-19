@@ -1,4 +1,5 @@
-const datas = require('../data')
+const datas = require('../data.json')
+const fs = require('fs')
 
 exports.home = function(req, res) { //ok
     return res.render('home', {datas})
@@ -22,29 +23,37 @@ exports.about = function(req, res) { //ok
     return res.render('sobre')
 }
 
-exports.create = function(req, res) { //ok
-    // const keys = Object.keys(req.body)
-
-    // for (key of keys) {
-    //     if (req.body[key] == "") {
-    //         return res.send(`Preencha todos os campos`)
-    //     }
-    // }
-    
-    // let {image, ingredients, preparation, information} = req.body
-
-    // data.push({
-    //     image,
-    //     ingredients,
-    //     preparation,
-    //     information,
-    // })
-
+exports.create = function(req, res) {
     return res.render('admin/create')
 }
-exports.post = function(req, res) {
-    return res.render('home', {data: datas})
+
+exports.post = function(req, res) { //ok
+    const keys = Object.keys(req.body)
+    
+    for (key of keys) {
+        if (req.body[key] == "") {
+            return res.send(`Preencha todos os campos`)
+        }
+    }
+    
+    let {id, image, ingredients, preparation, information} = req.body
+
+    datas.recipe.push({
+        id,
+        image,
+        ingredients,
+        preparation,
+        information
+    })
+
+    fs.writeFile("data.json", JSON.stringify(datas, null, 2), function(err) {
+        if (err) return res.send('Write file err')
+
+        return res.render('home', {datas})
+    })
+
 }
+
 exports.edit =function(req, res) {
     return res.render('admin/edition', {data: datas})
 }

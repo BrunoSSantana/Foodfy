@@ -16,4 +16,4 @@ function addIngredient() {
   document
     .querySelector(".add-ingredient")
     .addEventListener("click", addIngredient);
-//================>>>>>>===============>>>>>>===>>
+//================>>>>>>============>>>>>>===>>

@@ -5,6 +5,7 @@ const routes = require('./src/routes/routes')
 const server = express()
 
 server.set("view engine", "njk")
+server.use(express.urlencoded({extended: true}))//faz funcionar o req.body
 server.use(express.static('public'))
 server.use(routes)
 

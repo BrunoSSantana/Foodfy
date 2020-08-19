@@ -5,8 +5,8 @@
     {% endblock %}
     
     {% block contentAdmin %}
-        <form class="content-body">
-
+        <form class="content-body" method="POST" action="/admin/recipes">
+            
             <div class="content-header">
                 <h2>Criando Receita</h2>
                 <button type="submit">Salvar receita</button>
@@ -37,7 +37,7 @@
                     <h3>Modo de preparo</h3>
                     <input 
                     type="text" 
-                    name="preparation" >
+                    name="preparation"/>
                     <span>Adicionar novo passo</span>
                 </div>
 
