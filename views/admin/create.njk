@@ -21,6 +21,20 @@
                     name="image">
                 </div>
 
+                <div class="input">
+                    <h3>Nome da Receita</h3>
+                    <input 
+                    type="text" 
+                    name="title">
+                </div>
+
+                <div class="input">
+                    <h3>Nome do Autor</h3>
+                    <input 
+                    type="text" 
+                    name="author">
+                </div>
+
                 <div class="input" id="ingredients">
                     <h3>Ingredientes</h3>
                     <div class="ingredient">
@@ -35,10 +49,14 @@
 
                 <div class="input" id="preparation">
                     <h3>Modo de preparo</h3>
-                    <input 
-                    type="text" 
-                    name="preparation"/>
-                    <span>Adicionar novo passo</span>
+                    <div class="preparation">
+                        <input 
+                        type="text"
+                        value=""
+                        placeholder="preparation"
+                        name="preparation[]"/>
+                        <span>Adicionar novo passo</span>
+                    </div>
                 </div>
 
                 <div class="input more-infotmations">

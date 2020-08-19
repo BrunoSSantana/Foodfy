@@ -1,3 +1,4 @@
+
 function addIngredient() {
     const ingredients = document.querySelector("#ingredients");
     const fieldContainer = document.querySelectorAll(".ingredient");

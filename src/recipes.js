@@ -36,11 +36,13 @@ exports.post = function(req, res) { //ok
         }
     }
     
-    let {id, image, ingredients, preparation, information} = req.body
-
+    let {title, image, ingredients, preparation, information, author} = req.body
+    const id = title.split(' ').join('_')
     datas.recipe.push({
-        id,
         image,
+        title,
+        id,
+        author,
         ingredients,
         preparation,
         information
