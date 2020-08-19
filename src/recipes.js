@@ -51,8 +51,8 @@ exports.post = function(req, res) { //ok
     fs.writeFile("data.json", JSON.stringify(datas, null, 2), function(err) {
         if (err) return res.send('Write file err')
 
-        return res.render('home', {datas})
     })
+    return res.render('home', {datas})
 
 }
 
