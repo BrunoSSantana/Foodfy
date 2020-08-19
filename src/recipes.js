@@ -1,29 +1,46 @@
 const datas = require('../data')
 
-exports.home = function(req, res) {
-    return res.render('home', {data: datas})
+exports.home = function(req, res) { //ok
+    return res.render('home', {datas})
 }
-exports.recipes = function(req, res) {
-    return res.render('receitas', {data: datas})
+exports.recipes = function(req, res) { // ok
+    return res.render('receitas', {datas})
 }
-exports.show = function(req, res) {
+exports.show = function(req, res) { //ok
     const id = req.params.id
 
     const receita = datas.find( function(receita) {
         if(receita.id == id){
             return true
         } else if(!receita){
-            return res. send(`Receita nã encontrada`)
+            return res. send(`Receita não encontrada`)
         }
     })
     return res.render("prato", {receita})
 }
-exports.about = function(req, res) {
+exports.about = function(req, res) { //ok
     return res.render('sobre')
 }
 
-exports.create = function(req, res) {
-    return res.render('admin/listing')
+exports.create = function(req, res) { //ok
+    // const keys = Object.keys(req.body)
+
+    // for (key of keys) {
+    //     if (req.body[key] == "") {
+    //         return res.send(`Preencha todos os campos`)
+    //     }
+    // }
+    
+    // let {image, ingredients, preparation, information} = req.body
+
+    // data.push({
+    //     image,
+    //     ingredients,
+    //     preparation,
+    //     information,
+    // })
+
+    return res.render('admin/create')
 }
 exports.post = function(req, res) {
     return res.render('home', {data: datas})

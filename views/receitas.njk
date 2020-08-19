@@ -1,47 +1,32 @@
 {% extends "layout.njk" %}
-    {% block head %}
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <title>Receitas</title>
-    {% endblock %}
 
-    {% block content %}
-        <section>
-            <div class="mostaccessed">
-                    <div class="pratos">                    
-                        {% for data in datas %}
-                            <div class="prato" id="{{data.id}}">
-                                <img src="{{data.image}}" alt="{{data.title}}">
-                                <h4 class="nome-do-prato" >{{data.title}}</h4>
-                                <p class="chef">por {{data.author}}</p>
-                            </div>
-                        {% endfor %}
+{% block head %}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Receitas</title>
+{% endblock %}
 
-                        {% for data in datas %}
-                            <div class="prato" id="{{data.id}}">
-                                <img src="{{data.image}}" alt="{{data.title}}">
-                                <h4 class="nome-do-prato" >{{data.title}}</h4>
-                                <p class="chef">por {{data.author}}</p>
-                            </div>
-                        {% endfor %}
+{% block content %}
+    <section>
+        <div class="mostaccessed">
+                <div class="pratos">                    
+                    {% for data in datas %}
+                        <div class="prato" id="{{data.id}}">
+                            <img src="{{data.image}}" alt="{{data.title}}">
+                            <h4 class="nome-do-prato" >{{data.title}}</h4>
+                            <p class="chef">por {{data.author}}</p>
+                        </div>
+                    {% endfor %}
 
-                    </div>
-                
-            </div>
-        </section>
-
-        <div class="modal-overlay">
-            <div class="modal">
-
-                <div class="modal-content">
-
-                    <img src="" alt="">
-                    <h4></h4>
-                    <p></p>
+                    {% for data in datas %}
+                        <div class="prato" id="{{data.id}}">
+                            <img src="{{data.image}}" alt="{{data.title}}">
+                            <h4 class="nome-do-prato" >{{data.title}}</h4>
+                            <p class="chef">por {{data.author}}</p>
+                        </div>
+                    {% endfor %}
 
                 </div>
-
-                <a class="close-modal">Fechar modal</a>
-
-            </div>
+            
         </div>
-    {% endblock %}
+    </section>
+{% endblock %}

@@ -90,3 +90,9 @@ for (let button of buttons) {
         console.log(info)    
     })
 }
+const buttons = document.querySelectorAll('.input span')
+
+for (button of buttons) {
+    button.addEventListener("click", alert('FOI!'))
+
+}

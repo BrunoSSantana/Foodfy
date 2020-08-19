@@ -6,10 +6,12 @@
     
     {% block contentAdmin %}
         <form class="content-body">
+
             <div class="content-header">
                 <h2>Criando Receita</h2>
                 <button type="submit">Salvar receita</button>
             </div>
+
             <div class="content-input">
 
                 <div class="input">
@@ -19,15 +21,18 @@
                     name="image">
                 </div>
 
-                <div class="input">
+                <div class="input" id="ingredients">
                     <h3>Ingredientes</h3>
                     <input
                     type="text"
                     name="ingredients">
                     <span>Adicionar novo ingrediente</span>
+                    <ul>
+
+                    </ul>
                 </div>
 
-                <div class="input">
+                <div class="input" id="preparation">
                     <h3>Modo de preparo</h3>
                     <input 
                     type="text" 

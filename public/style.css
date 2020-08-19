@@ -350,6 +350,7 @@ li {
     font-weight: bold;
     font-size: 16px;
     color: #6558C3;
+    cursor: pointer;
 }
 .content-body input {
     height: 49px;
