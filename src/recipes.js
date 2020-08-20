@@ -14,10 +14,10 @@ exports.show = function(req, res) { //ok
         if(receita.id == id){
             return true
         } else if(!receita){
-            return res. send(`Receita não encontrada`)
+            return res.send(`Receita não encontrada`)
         }
     })
-    return res.render("receita", {receita})
+    return res.render("receita", {recipe})
 }
 exports.about = function(req, res) { //ok
     return res.render('sobre')
@@ -58,5 +58,15 @@ exports.post = function(req, res) { //ok
 
 }
 exports.edit = function(req, res) {
-    const id = req.params.id
+    const {id} = req.params
+
+    const receita = data.recipe.find((receita)=>{
+        if(receita.id == id) {
+            return true
+        } else if(!receita) {
+            return res.send(`Receita não encontrada`)
+        }
+    })
+
+    return res.render("admin/edition", {receita})
 }

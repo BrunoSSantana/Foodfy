@@ -1,0 +1,66 @@
+<div class="content-header">
+    <h2>Criando Receita</h2>
+    <button type="submit">Salvar receita</button>
+</div>
+
+<div class="content-input">
+    <div class="input">
+        <h3>Imagem da Receita</h3>
+        <input 
+        type="text" 
+        name="image"
+        value="{{receita.image}}"/>
+    </div>
+
+    <div class="input">
+        <h3>Nome da Receita</h3>
+        <input 
+        type="text" 
+        name="title"
+        value="{{receita.title}}"/>
+    </div>
+
+    <div class="input">
+        <h3>Nome do Autor</h3>
+        <input 
+        type="text" 
+        name="author"
+        value="{{receita.author}}"/>
+    </div>
+
+    <div class="input" id="ingredients">
+        <h3>Ingredientes</h3>
+        {% for ingredient in receita.ingredients %}
+            <div class="ingredient">
+                <input
+                type="text"
+                value="{{ingredient}}"
+                placeholder="Ingrediente"
+                name="ingredients[]"/>
+            </div>
+        {% endfor %}
+    </div>
+    <button class="add-ingredient" type="button">Adicionar novo ingrediente</button>
+
+    <div class="input" id="preparations">
+        <h3>Modo de preparo</h3>
+        {% for preparation in receita.preparation %}
+        <div class="preparation">
+            <input 
+            type="text"
+            value="{{preparation}}"
+            placeholder="preparation"
+            name="preparation[]"/>
+        </div>
+        {% endfor %}
+    </div>
+    <button class="add-preparation" type="button">Adicionar nova etapa</button>
+
+    <div class="input more-infotmations">
+        <h3>Informações Adicionais</h3>
+        <input 
+        type="text" 
+        name="information"
+        value="{{receita.information}}"/>
+    </div>
+</div>

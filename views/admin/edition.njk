@@ -5,53 +5,7 @@
 {% endblock %}
 
 {% block contentAdmin %}
-    <form class="content-body">
-        <div class="content-header">
-            <h2>Criando Receita</h2>
-            <button type="submit">Salvar receita</button>
-        </div>
-
-        <div class="content-input">
-
-            <div class="input">
-                <h3>Imagem da Receita</h3>
-                <input 
-                type="text"
-                value="{{data.image}}" 
-                name="image">
-            </div>
-
-            <div class="input">
-                <h3>Ingredientes</h3>
-                <input 
-                type="text"
-                value=""
-                name="ingredients" >
-                <span>Adicionar novo ingrediente</span>
-                {% for ingredient in {{data.ingredients}} %}
-                    <span>ingredient</span>
-                {% endfor %}
-            </div>
-
-            <div class="input">
-                <h3>Modo de preparo</h3>
-                <input 
-                type="text"
-                value=""
-                name="preparation" >
-                <span>Adicionar novo passo</span>
-                {% for mode in {{data.pepararion}} %}
-                <span>mode</span>
-                {% endfor %}
-            </div>
-
-            <div class="input more-infotmations">
-                <h3>Informações Adicionais</h3>
-                <input 
-                type="text"
-                value="{{data.information}}"
-                name="information" >
-            </div>
-        </div>
+    <form class="content-body" method="POST" action="/instructors?_method=PUT">   
+        {% include 'admin/fields.njk'%}
     </form>
 {% endblock %}

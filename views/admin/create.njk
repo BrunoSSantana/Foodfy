@@ -1,70 +1,11 @@
 {% extends "admin/layout.njk" %}
 
-    {% block head %}
-        <title>Create</title>
-    {% endblock %}
-    
-    {% block contentAdmin %}
-        <form class="content-body" method="POST" action="/admin/recipes">
-            
-            <div class="content-header">
-                <h2>Criando Receita</h2>
-                <button type="submit">Salvar receita</button>
-            </div>
+{% block head %}
+    <title>Create</title>
+{% endblock %}
 
-            <div class="content-input">
-
-                <div class="input">
-                    <h3>Imagem da Receita</h3>
-                    <input 
-                    type="text" 
-                    name="image">
-                </div>
-
-                <div class="input">
-                    <h3>Nome da Receita</h3>
-                    <input 
-                    type="text" 
-                    name="title">
-                </div>
-
-                <div class="input">
-                    <h3>Nome do Autor</h3>
-                    <input 
-                    type="text" 
-                    name="author">
-                </div>
-
-                <div class="input" id="ingredients">
-                    <h3>Ingredientes</h3>
-                    <div class="ingredient">
-                        <input
-                        type="text"
-                        value=""
-                        placeholder="Ingrediente"
-                        name="ingredients[]"/>
-                    </div>
-                </div>
-                <button class="add-ingredient" type="button">Adicionar novo ingrediente</button>
-
-                <div class="input" id="preparations">
-                    <h3>Modo de preparo</h3>
-                    <div class="preparation">
-                        <input 
-                        type="text"
-                        value=""
-                        placeholder="preparation"
-                        name="preparation[]"/>
-                    </div>
-                </div>
-                <button class="add-preparation" type="button">Adicionar nova etapa</button>
-
-                <div class="input more-infotmations">
-                    <h3>Informações Adicionais</h3>
-                    <input 
-                    type="text" 
-                    name="information" >
-                </div>
-            </div>
-        </form>
-    {% endblock %}
+{% block contentAdmin %}
+    <form class="content-body" method="POST" action="/admin/recipes">
+        {% include 'admin/fields.njk'%}
+    </form>
+{% endblock %}
