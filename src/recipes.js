@@ -52,7 +52,7 @@ exports.post = function(req, res) { //ok
         if (err) return res.send('Write file err')
 
     })
-    return res.render('home', {datas})
+    return res.redirect("/admin/recipes")
 
 }
 
