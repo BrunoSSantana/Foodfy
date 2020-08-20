@@ -15,7 +15,7 @@
                 <h3>Mais acessadas</h3>
 
                 <div class="pratos">
-                    {% for recipe in recipes.recipe %}
+                    {% for recipe in recipes %}
                         <div class="prato" id="{{recipe.id}}">
                             <img src="{{recipe.image}}" alt="{{recipe.title}}">
                             <h4 class="nome-do-prato" >{{recipe.title}}</h4>
@@ -44,5 +44,3 @@
             </div>
         </div>
     {% endblock %}
-
-    

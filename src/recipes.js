@@ -2,10 +2,10 @@ const data = require('../data.json')
 const fs = require('fs')
 
 exports.home = function(req, res) { //ok
-    return res.render('home', {recipes: data})
+    return res.render('home', {recipes: datas.recipe})
 }
 exports.recipes = function(req, res) { // ok
-    return res.render('receitas', {recipes :data.recipe})
+    return res.render('receitas', {recipes: datas.recipe})
 }
 exports.show = function(req, res) { //ok
     const id = req.params.id
@@ -38,9 +38,9 @@ exports.post = function(req, res) { //ok
     
     let {title, image, ingredients, preparation, information, author} = req.body
     const id = title.split(' ').join('_')
-    
 
-    data.recipe.push({
+
+    datas.recipe.push({
         image,
         title,
         id,
@@ -57,13 +57,6 @@ exports.post = function(req, res) { //ok
     })
 
 }
-
-exports.edit =function(req, res) {
-    return res.render('admin/edition', {recipe: data.recipe})
-}
-exports.put =function(req, res) {
-    return res.render('home', {recipe: data.recipe})
-}
-exports.delete = function(req, res) {
-    return res.render('home', {recipe: data.recipe})
+exports.edit = function(req, res) {
+    const id = req.params.id
 }
