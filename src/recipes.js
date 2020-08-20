@@ -2,10 +2,10 @@ const datas = require('../data.json')
 const fs = require('fs')
 
 exports.home = function(req, res) { //ok
-    return res.render('home', {datas})
+    return res.render('home', {recipes: datas.recipe})
 }
 exports.recipes = function(req, res) { // ok
-    return res.render('receitas', {datas})
+    return res.render('receitas', {recipes: datas.recipe})
 }
 exports.show = function(req, res) { //ok
     const id = req.params.id
@@ -38,6 +38,8 @@ exports.post = function(req, res) { //ok
     
     let {title, image, ingredients, preparation, information, author} = req.body
     const id = title.split(' ').join('_')
+
+
     datas.recipe.push({
         image,
         title,
@@ -51,17 +53,10 @@ exports.post = function(req, res) { //ok
     fs.writeFile("data.json", JSON.stringify(datas, null, 2), function(err) {
         if (err) return res.send('Write file err')
 
+        return res.redirect("/admin/recipes")
     })
-    return res.redirect("/admin/recipes")
 
 }
-
-exports.edit =function(req, res) {
-    return res.render('admin/edition', {data: datas})
-}
-exports.put =function(req, res) {
-    return res.render('home', {data: datas})
-}
-exports.delete = function(req, res) {
-    return res.render('home', {data: datas})
+exports.edit = function(req, res) {
+    const id = req.params.id
 }
