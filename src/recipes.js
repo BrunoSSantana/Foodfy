@@ -10,7 +10,7 @@ exports.recipes = function(req, res) { // ok
 exports.show = function(req, res) { //ok
     const id = req.params.id
 
-    const receita = data.recipe.find( function(receita) {
+    const recipe = data.recipe.find( function(receita) {
         if(receita.id == id){
             return true
         } else if(!receita){
@@ -19,14 +19,15 @@ exports.show = function(req, res) { //ok
     })
     return res.render("receita", {recipe})
 }
+//================================================
 exports.about = function(req, res) { //ok
     return res.render('sobre')
 }
-
+//================================================
 exports.create = function(req, res) {
     return res.render('admin/create')
 }
-
+//================================================
 exports.post = function(req, res) { //ok
     const keys = Object.keys(req.body)
     
@@ -38,7 +39,6 @@ exports.post = function(req, res) { //ok
     
     let {title, image, ingredients, preparation, information, author} = req.body
     const id = title.split(' ').join('_')
-
 
     datas.recipe.push({
         image,
@@ -57,6 +57,7 @@ exports.post = function(req, res) { //ok
     })
 
 }
+//================================================
 exports.edit = function(req, res) {
     const {id} = req.params
 
@@ -68,5 +69,41 @@ exports.edit = function(req, res) {
         }
     })
 
-    return res.render("admin/edition", {receita})
+    return res.render("admin/edit", {receita})
 }
+//================================================
+exports.put = function(req, res) {
+    const {title} = req.body
+    const id = title.toLowerCase().split(' ').join('_')
+    let index = 0
+
+    const foundrecipe = data.recipe.find(function(recipe, foundIndex){
+        if (id == recipe.id) {
+            index = foundIndex
+            return true
+        }
+    })
+    
+    if (!foundrecipe) {
+        return res.send('Instrutor não encontrado')
+    }
+
+    const recipe = {
+        ...foundrecipe,
+        ...req.body,
+        id
+    }
+
+    data.recipe[index] = recipe
+
+
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
+        if (err) return res.send('Write file err')
+
+    return res.redirect({recipes: recipe}, `/admin/recipes/${id}`)
+    })
+}
+//================================================
+// exports.delete = function(req, res) {
+    
+// }
