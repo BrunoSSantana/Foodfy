@@ -11,8 +11,8 @@
         <button>Editar</button>
 
     </div>
-    <img src="https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/receitas/burger.png" alt="{{receita.title}}">
-    <h4 class="nome-do-prato" >Bolo de Chocolate</h4>
+    <img src="{{recipe.image}}" alt="{{recipe.title}}">
+    <h4 class="nome-do-prato" >{{recipe.title}}</h4>
     <p class="chef">por Bruno Santana</p>
     
     <div class="description">
@@ -23,7 +23,7 @@
             </div>
 
             <a id="ingredientes"><p><ul>
-                {% for item in receita.ingredients %}
+                {% for item in recipe.ingredients %}
                     <li>{{item}}</li>
                 {% endfor %}
             </ul></a>
@@ -34,7 +34,7 @@
                 <h5>Modo de preparo</h5>
             </div>
 
-            <a id="mod"><p>{{receita.preparation}}</p></a>
+            <a id="mod"><p>{{recipe.preparation}}</p></a>
         </div>
 
         <div class="partial">
@@ -42,7 +42,7 @@
                 <h5>Informações Adicinais</h5>
             </div>
 
-            <a id="infos"><p>{{receita.information}}</p></a>
+            <a id="infos"><p>{{recipe.information}}</p></a>
         </div>
 
     </div>

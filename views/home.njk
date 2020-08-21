@@ -1,46 +1,29 @@
 {% extends "layout.njk" %}
 
-    {% block content %}
-        <main>
-            <div class="main">
-                <h2>As melhores receitas</h2>
-                <p>Aprenda a construir os melhores pratos com receitas criadas por profissionais do mundo inteiro.</p>
+{% block content %}
+    <main>
+        <div class="main">
+            <h2>As melhores receitas</h2>
+            <p>Aprenda a construir os melhores pratos com receitas criadas por profissionais do mundo inteiro.</p>
+        </div>
+        
+    </main>
+    
+    <section>
+        <div class="mostaccessed">
+
+            <h3>Mais acessadas</h3>
+
+            <div class="pratos">
+                {% for item in recipe %}
+                    <div class="prato" id="{{item.id}}">
+                        <img src="{{item.image}}" alt="{{item.title}}">
+                        <h4 class="nome-do-prato" >{{item.title}}</h4>
+                        <p class="chef">por {{item.author}}</p>
+                    </div>
+                {% endfor %}
             </div>
             
-        </main>
-        
-        <section>
-            <div class="mostaccessed">
-
-                <h3>Mais acessadas</h3>
-
-                <div class="pratos">
-                    {% for recipe in recipes %}
-                        <div class="prato" id="{{recipe.id}}">
-                            <img src="{{recipe.image}}" alt="{{recipe.title}}">
-                            <h4 class="nome-do-prato" >{{recipe.title}}</h4>
-                            <p class="chef">por {{recipe.author}}</p>
-                        </div>
-                    {% endfor %}
-                    
-                </div>
-
-            </div>
-        </section>
-        
-        <div class="modal-overlay">
-            <div class="modal">
-
-                <div class="modal-content">
-
-                    <img src="" alt="">
-                    <h4></h4>
-                    <p></p>
-
-                </div>
-
-                <a class="close-modal">Fechar modal</a>
-
-            </div>
         </div>
-    {% endblock %}
+    </section>
+{% endblock %}

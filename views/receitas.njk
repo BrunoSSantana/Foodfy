@@ -8,25 +8,24 @@
 {% block content %}
     <section>
         <div class="mostaccessed">
-                <div class="pratos">                    
-                    {% for recipe in recipes %}
-                        <div class="prato" id="{{recipe.id}}">
-                            <img src="{{recipe.image}}" alt="{{recipe.title}}">
-                            <h4 class="nome-do-prato" >{{recipe.title}}</h4>
-                            <p class="chef">por {{recipe.author}}</p>
-                        </div>
-                    {% endfor %}
+            <div class="pratos">                    
+                {% for item in recipe %}
+                    <div class="prato" id="{{item.id}}">
+                        <img src="{{item.image}}" alt="{{item.title}}">
+                        <h4 class="nome-do-prato" >{{item.title}}</h4>
+                        <p class="chef">por {{item.author}}</p>
+                    </div>
+                {% endfor %}
 
-                    {% for recipe in recipes %}
-                        <div class="prato" id="{{recipe.id}}">
-                            <img src="{{recipe.image}}" alt="{{recipe.title}}">
-                            <h4 class="nome-do-prato" >{{recipe.title}}</h4>
-                            <p class="chef">por {{recipe.author}}</p>
-                        </div>
-                    {% endfor %}
+                {% for item in recipe %}
+                    <div class="prato" id="{{item.id}}">
+                        <img src="{{item.image}}" alt="{{item.title}}">
+                        <h4 class="nome-do-prato" >{{item.title}}</h4>
+                        <p class="chef">por {{item.author}}</p>
+                    </div>
+                {% endfor %}
 
-                </div>
-            
+            </div>
         </div>
     </section>
 {% endblock %}

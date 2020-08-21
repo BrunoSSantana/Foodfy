@@ -9,7 +9,7 @@
         <input 
         type="text" 
         name="image"
-        value="{{receita.image}}"/>
+        value="{{recipe.image}}"/>
     </div>
 
     <div class="input">
@@ -17,7 +17,7 @@
         <input 
         type="text" 
         name="title"
-        value="{{receita.title}}"/>
+        value="{{recipe.title}}"/>
     </div>
 
     <div class="input">
@@ -25,12 +25,12 @@
         <input 
         type="text" 
         name="author"
-        value="{{receita.author}}"/>
+        value="{{recipe.author}}"/>
     </div>
 
     <div class="input" id="ingredients">
         <h3>Ingredientes</h3>
-        {% for ingredient in receita.ingredients %}
+        {% for ingredient in recipe.ingredients %}
             <div class="ingredient">
                 <input
                 type="text"
@@ -44,7 +44,7 @@
 
     <div class="input" id="preparations">
         <h3>Modo de preparo</h3>
-        {% for preparation in receita.preparation %}
+        {% for preparation in recipe.preparation %}
         <div class="preparation">
             <input 
             type="text"
@@ -61,6 +61,6 @@
         <input 
         type="text" 
         name="information"
-        value="{{receita.information}}"/>
+        value="{{recipe.information}}"/>
     </div>
 </div>

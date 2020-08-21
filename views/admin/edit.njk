@@ -5,7 +5,15 @@
 {% endblock %}
 
 {% block contentAdmin %}
+
     <form class="content-body" method="POST" action="/admin/recipes?_method=PUT">   
         {% include 'admin/fields.njk'%}
     </form>
+
+     <form class="form-delete" action="/admin/recipes?_method=DELETE" method="post">
+
+            <input type="hidden" name="id" value={{recipe.id}}>
+            <button type="submit">Deletar</button>
+        
+        </form>
 {% endblock %}

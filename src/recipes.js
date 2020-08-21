@@ -2,11 +2,13 @@ const data = require('../data.json')
 const fs = require('fs')
 
 exports.home = function(req, res) { //ok
-    return res.render('home', {recipes: datas.recipe})
+    return res.render('home', {recipe: datas.recipe})
 }
+//================================================
 exports.recipes = function(req, res) { // ok
-    return res.render('receitas', {recipes: datas.recipe})
+    return res.render('receitas', {recipe: datas.recipe})
 }
+//================================================
 exports.show = function(req, res) { //ok
     const id = req.params.id
 
@@ -53,7 +55,7 @@ exports.post = function(req, res) { //ok
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
         if (err) return res.send('Write file err')
 
-        return res.redirect("/admin/recipes")
+        return res.redirect("/admin/recipes", {recipe: data.recipes})
     })
 
 }
@@ -100,10 +102,22 @@ exports.put = function(req, res) {
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
         if (err) return res.send('Write file err')
 
-    return res.redirect({recipes: recipe}, `/admin/recipes/${id}`)
+    return res.redirect({recipe}, `/admin/recipes/${id}`)//err express res.redirect
     })
 }
 //================================================
 // exports.delete = function(req, res) {
-    
+//     const {id} = req.body
+
+//     const filterrecipes = data.recipes.filter(function(recipe){
+//         return recipe.id != id
+//     })
+
+//     data.recipes = filterrecipes
+
+//     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
+//         if(err) return res.send("Erro na execução do processo")
+
+//         return res.redirect("/admin/recipes/", {recipe: data})
+//     })
 // }
