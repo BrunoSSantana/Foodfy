@@ -40,7 +40,7 @@ exports.post = function(req, res) { //ok
     }
     
     let {title, image, ingredients, preparation, information, author} = req.body
-    const id = title.split(' ').join('_')
+    const id = Number(data.length + 1)
 
     datas.recipe.push({
         image,
@@ -75,25 +75,25 @@ exports.edit = function(req, res) {
 }
 //================================================
 exports.put = function(req, res) {
-    const {title} = req.body
-    const id = title.toLowerCase().split(' ').join('_')
+    const {id} = req.body
     let index = 0
 
-    const foundrecipe = data.recipe.find(function(recipe, foundIndex){
-        if (id == recipe.id) {
-            index = foundIndex
-            return true
+    function founfor(element, foundindex) {
+        if (element.id == id){
+            index = foundindex
+            return element
         }
-    })
-    
-    if (!foundrecipe) {
-        return res.send('Receita não encontrada')
+        if (!element) {
+            return res.send('Receita não encontrada')
+        }
     }
+
+    const foundrecipe = data.recipe.find(founfor)
 
     const recipe = {
         ...foundrecipe,
         ...req.body,
-        id
+        id: Number(req.body.id)
     }
 
     data.recipe[index] = recipe
@@ -106,18 +106,18 @@ exports.put = function(req, res) {
     })
 }
 //================================================
-// exports.delete = function(req, res) {
-//     const {id} = req.body
+exports.delete = function(req, res) {
+    const {id} = req.body
 
-//     const filterrecipes = data.recipes.filter(function(recipe){
-//         return recipe.id != id
-//     })
+    const filterrecipes = data.recipe.filter(function(recipe){
+        return recipe.id != id
+    })
 
-//     data.recipes = filterrecipes
+    data.recipes = filterrecipes
 
-//     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
-//         if(err) return res.send("Erro na execução do processo")
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
+        if(err) return res.send("Erro na execução do processo")
 
-//         return res.redirect("/admin/recipes/", {recipe: data})
-//     })
-// }
+        return res.redirect("/admin/recipes/")
+    })
+}
