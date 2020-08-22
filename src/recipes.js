@@ -2,11 +2,11 @@ const data = require('../data.json')
 const fs = require('fs')
 
 exports.home = function(req, res) { //ok
-    return res.render('home', {recipe: datas.recipe})
+    return res.render('home', {recipe: data.recipe})
 }
 //================================================
 exports.recipes = function(req, res) { // ok
-    return res.render('receitas', {recipe: datas.recipe})
+    return res.render('receitas', {recipe: data.recipe})
 }
 //================================================
 exports.show = function(req, res) { //ok
@@ -71,7 +71,7 @@ exports.edit = function(req, res) {
         }
     })
 
-    return res.render("admin/edit", {receita})
+    return res.render("admin/edit", {recipe: receita})
 }
 //================================================
 exports.put = function(req, res) {
@@ -87,7 +87,7 @@ exports.put = function(req, res) {
     })
     
     if (!foundrecipe) {
-        return res.send('Instrutor não encontrado')
+        return res.send('Receita não encontrada')
     }
 
     const recipe = {
@@ -102,7 +102,7 @@ exports.put = function(req, res) {
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
         if (err) return res.send('Write file err')
 
-    return res.redirect({recipe}, `/admin/recipes/${id}`)//err express res.redirect
+    return res.redirect(`/admin/recipes/${id}`)//err express res.redirect
     })
 }
 //================================================
