@@ -385,8 +385,9 @@ li {
     display: flex;
     justify-content: space-between;
 }
-.content-header button:first-child {
+.content-header .submit button:first-child {
     background-color: #DC4747;
+    margin-right: 10px;
 }
 .content-body,
 .input {

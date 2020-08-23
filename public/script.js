@@ -38,7 +38,7 @@ for (let button of buttons) {
 }
 
 //==========================================================================
-
+//Adicionando ingredientes e preparações
 function addIngredient() {
     const ingredients = document.querySelector("#ingredients");
     const fieldContainer = document.querySelectorAll(".ingredient");
@@ -76,3 +76,12 @@ function addPreparation() {
 document
   .querySelector(".add-preparation")
   .addEventListener("click", addPreparation);
+//=====================================================
+//Confirmando exclusão da receita
+const formDelete = document.querySelector(".form-delete")
+formDelete.addEventListener("submit", function(event) {
+    const confirmation = confirm("Deseja deletar?")
+    if (!confirmation){
+        event.preventDefault()
+    }
+})

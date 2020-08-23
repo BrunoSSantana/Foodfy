@@ -9,8 +9,10 @@
     <form class="content-body" method="POST" action="/admin/recipes?_method=PUT">
         <div class="content-header">
             <h2>Editar Receita</h2>
-            <button type="submit" form="my-form">Deletar</button>
-            <button type="submit">Salvar receita</button>
+            <div class="submit">
+                <button id="form-delete" type="submit" form="my-form">Deletar</button>
+                <button type="submit">Salvar receita</button>
+            </div>
         </div>
         {% include 'admin/fields.njk'%}
         <input type="hidden" name="id" value={{recipe.id}}>

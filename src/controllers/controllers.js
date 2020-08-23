@@ -1,12 +1,10 @@
-const data = require('../data.json')
+const data = require('../../data.json')
 const fs = require('fs')
 
-exports.home = function(req, res) { //ok
-    return res.render('admin/listing', {recipes: data.recipe})
-}
-//================================================
+/* === Admin === */ 
+
 exports.recipes = function(req, res) { // ok
-    return res.render('receitas', {recipe: data.recipe})
+    return res.render('admin/listing', {recipes: data.recipe})
 }
 //================================================
 exports.show = function(req, res) { //ok
@@ -20,10 +18,6 @@ exports.show = function(req, res) { //ok
         }
     })
     return res.render("admin/details", {recipe})
-}
-//================================================
-exports.about = function(req, res) { //ok
-    return res.render('sobre')
 }
 //================================================
 exports.create = function(req, res) {
@@ -120,4 +114,31 @@ exports.delete = function(req, res) {
 
         return res.redirect("/admin/recipes/")
     })
+}
+
+/* === Users === */ 
+
+exports.home = function(req, res) { //ok
+    return res.render('home', {recipes: data.recipe})
+}
+//================================================
+exports.about = function(req, res) { //ok
+    return res.render('sobre')
+}
+//================================================
+exports.showUsers = function(req, res) { //ok
+    const id = req.params.id
+
+    const recipe = data.recipe.find( function(receita) {
+        if(receita.id == id){
+            return true
+        } else if(!receita){
+            return res.send(`Receita não encontrada`)
+        }
+    })
+    return res.render("receitas", {recipe})
+}
+//================================================
+exports.recipesUsers = function(req, res) { // ok
+    return res.render('receitas', {recipe: data.recipe})
 }
