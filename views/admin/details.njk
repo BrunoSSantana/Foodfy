@@ -8,7 +8,7 @@
 <div class="banner details">
     <div>
         <h5>Receita: Bolo de Chocolate</h5>
-        <button>Editar</button>
+        <button><a href="/admin/recipes/{{recipe.id}}/edit">Editar</a></button>
 
     </div>
     <img src="{{recipe.image}}" alt="{{recipe.title}}">
@@ -22,11 +22,13 @@
                 <h5>Ingredientes</h5>
             </div>
 
-            <a id="ingredientes"><p><ul>
+            <div id="ingredientes">
+                <ul>
                 {% for item in recipe.ingredients %}
                     <li>{{item}}</li>
                 {% endfor %}
-            </ul></a>
+                </ul>
+            </div>
         </div>
 
         <div class="partial">

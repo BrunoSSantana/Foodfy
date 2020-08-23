@@ -2,7 +2,7 @@ const data = require('../data.json')
 const fs = require('fs')
 
 exports.home = function(req, res) { //ok
-    return res.render('home', {recipe: data.recipe})
+    return res.render('admin/listing', {recipes: data.recipe})
 }
 //================================================
 exports.recipes = function(req, res) { // ok
@@ -19,7 +19,7 @@ exports.show = function(req, res) { //ok
             return res.send(`Receita não encontrada`)
         }
     })
-    return res.render("receita", {recipe})
+    return res.render("admin/details", {recipe})
 }
 //================================================
 exports.about = function(req, res) { //ok

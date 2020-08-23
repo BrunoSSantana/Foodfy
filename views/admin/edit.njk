@@ -7,12 +7,16 @@
 {% block contentAdmin %}
 
     <form class="content-body" method="POST" action="/admin/recipes?_method=PUT">
-        <h3>Editar Receita</h3>
+        <div class="content-header">
+            <h2>Editar Receita</h2>
+            <button type="submit" form="my-form">Deletar</button>
+            <button type="submit">Salvar receita</button>
+        </div>
         {% include 'admin/fields.njk'%}
         <input type="hidden" name="id" value={{recipe.id}}>
     </form>
 
-     <form class="form-delete" action="/admin/recipes?_method=DELETE" method="post">
+    <form class="form-delete" id="my-form" action="/admin/recipes?_method=DELETE" method="post">
 
         <input type="hidden" name="id" value={{recipe.id}}>
         <button type="submit">Deletar</button>

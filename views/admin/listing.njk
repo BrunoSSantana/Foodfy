@@ -8,61 +8,19 @@
 <div class="manager">
     <h2>Gerenciar receitas</h2> 
 </div>
-
 <div class="listing">
+
+{% for recipe in recipes %}
     <div class="recipe">
-        <img src="https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/receitas/burger.png" alt="">
+        <img src="{{recipe.image}}" alt="">
         <div>
-            <h3>Triplo Burger</h3>
-            <p>por Bruno Santana</p>
-            <a href="">Visualizar</a>
+            <h3>{{recipe.title}}</h3>
+            <p>por {{recipe.author}}</p>
+            <a href="/admin/recipes/{{recipe.id}}">Visualizar</a>
         </div>
     </div>
+{% endfor %}
 
-    <div class="recipe">
-        <img src="https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/receitas/burger.png" alt="">
-        <div>
-            <h3>Triplo Burger</h3>
-            <p>por Bruno Santana</p>
-            <a href="">Visualizar</a>
-        </div>
-    </div>
-
-    <div class="recipe">
-        <img src="https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/receitas/burger.png" alt="">
-        <div>
-            <h3>Triplo Burger</h3>
-            <p>por Bruno Santana</p>
-            <a href="">Visualizar</a>
-        </div>
-    </div>
-
-    <div class="recipe">
-        <img src="https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/receitas/burger.png" alt="">
-        <div>
-            <h3>Triplo Burger</h3>
-            <p>por Bruno Santana</p>
-            <a href="">Visualizar</a>
-        </div>
-    </div>
-
-    <div class="recipe">
-        <img src="https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/receitas/burger.png" alt="">
-        <div>
-            <h3>Triplo Burger</h3>
-            <p>por Bruno Santana</p>
-            <a href="">Visualizar</a>
-        </div>
-    </div>
-
-    <div class="recipe">
-        <img src="https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/receitas/burger.png" alt="">
-        <div>
-            <h3>Triplo Burger</h3>
-            <p>por Bruno Santana</p>
-            <a href="">Visualizar</a>
-        </div>  
-    </div>
 </div>
 
 {% endblock %}

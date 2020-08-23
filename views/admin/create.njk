@@ -6,7 +6,10 @@
 
 {% block contentAdmin %}
     <form class="content-body" method="POST" action="/admin/recipes">
-        <h3>Nova Receita</h3>
+        <div class="content-header">
+            <h2>Criar Receita</h2>
+            <button type="submit">Salvar receita</button>
+        </div>
         {% include 'admin/fields.njk'%}
     </form>
 {% endblock %}

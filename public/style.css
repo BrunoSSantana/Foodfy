@@ -22,6 +22,17 @@ nav {
     margin-top: 36px;
     margin-bottom: 30px;
 }
+span {
+    cursor: pointer;
+    color: #777;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+button {
+    cursor: pointer;
+}
 /* nav a {
     background:  url(assets/logo.png) no-repeat;
 } */
@@ -285,7 +296,7 @@ footer {
     display: flex;
     flex-direction: column;
 }
-.partial button {
+/* .partial button {
     margin-left: 8px;
     text-transform: uppercase;
     font-size: 12px;
@@ -295,11 +306,12 @@ footer {
     border: none;
     justify-content: center;
     cursor: pointer;
-}
+} */
 
 .head {
     display: flex;
     align-items: baseline;
+    justify-items: center;
 }
 .button {
     height: 28px;
@@ -373,6 +385,9 @@ li {
     display: flex;
     justify-content: space-between;
 }
+.content-header button:first-child {
+    background-color: #DC4747;
+}
 .content-body,
 .input {
     display: flex;
@@ -382,12 +397,12 @@ li {
 .details.banner div:first-child {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
     width: 940px;
 }
 .details.banner h5 {
     font-size: 24px;
-    margin: 55px 0 24px;
+    margin: 55px 20px 24px 0;
 }
 .details.banner button {
     height: 35px;
@@ -433,4 +448,7 @@ li {
     font-weight: bold;
     color: #6558C3;
     text-decoration: none;
+}
+.details, .listing {
+    margin-bottom: 30px;
 }
