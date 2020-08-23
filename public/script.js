@@ -30,10 +30,8 @@ for (let button of buttons) {
 for (let button of buttons) {
     button.addEventListener("click", function() {
         const id = button.getAttribute("id")
-        const info = document.querySelector(`.partial a#${id}`)
-        info.classList.toggle('displayNone')
-        //console.log(id)
-        console.log(info)    
+        const info = document.querySelector(`.partial div#${id}`)
+        info.classList.toggle('displayNone')   
     })
 }
 
@@ -55,8 +53,8 @@ function addIngredient() {
   }
   
   document
-    .querySelector(".add-ingredient")
-    .addEventListener("click", addIngredient);
+  .querySelector(".add-ingredient")
+  .addEventListener("click", addIngredient);
 //================>>>>>>============>>>>>>===>>
 function addPreparation() {
   const preparations = document.querySelector("#preparations");

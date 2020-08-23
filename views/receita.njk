@@ -14,30 +14,32 @@
 
             <div class="partial">
                 <div class="head">
-                    <h5>Ingredientes</h5><button id="ingredientes" class="button">ocultar</button>
+                    <h5>Ingredientes</h5><span id="ingredientes" class="button">ocultar</span>
                 </div>
 
-                <a id="ingredientes"><p><ul>
+                <div id="ingredientes">
+                    <ul>
                     {% for item in recipe.ingredients %}
                         <li>{{item}}</li>
                     {% endfor %}
-                </ul></a>
+                    </ul>
+                </div>
             </div>
 
             <div class="partial">
                 <div class="head">
-                    <h5>Modo de preparo</h5><button id="mod" class="button">ocultar</button>
+                    <h5>Modo de preparo</h5><span id="mod" class="button">ocultar</span>
                 </div>
 
-                <a id="mod"><p>{{recipe.preparation}}</p></a>
+                <div id="mod"><p>{{recipe.preparation}}</p></div>
             </div>
 
             <div class="partial">
                 <div class="head">
-                    <h5>Informações Adicinais</h5><button id="infos" class="button">ocultar</button>
+                    <h5>Informações Adicinais</h5><span id="infos" class="button">ocultar</span>
                 </div>
 
-                <a id="infos"><p>{{recipe.information}}</p></a>
+                <div id="infos"><p>{{recipe.information}}</p></div>
             </div>
 
         </div>

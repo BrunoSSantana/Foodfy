@@ -311,7 +311,9 @@ footer {
 .head {
     display: flex;
     align-items: baseline;
-    justify-items: center;
+}
+.head span {
+    margin-left: 10px;
 }
 .button {
     height: 28px;

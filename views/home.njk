@@ -15,11 +15,11 @@
             <h3>Mais acessadas</h3>
 
             <div class="pratos">
-                {% for item in recipe %}
-                    <div class="prato" id="{{item.id}}">
-                        <img src="{{item.image}}" alt="{{item.title}}">
-                        <h4 class="nome-do-prato" >{{item.title}}</h4>
-                        <p class="chef">por {{item.author}}</p>
+                {% for recipe in recipes %}
+                    <div class="prato" id="{{recipe.id}}">
+                        <img src="{{recipe.image}}" alt="{{recipe.title}}">
+                        <h4 class="nome-do-prato" >{{recipe.title}}</h4>
+                        <p class="chef">por {{recipe.author}}</p>
                     </div>
                 {% endfor %}
             </div>

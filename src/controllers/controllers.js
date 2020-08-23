@@ -136,7 +136,7 @@ exports.showUsers = function(req, res) { //ok
             return res.send(`Receita não encontrada`)
         }
     })
-    return res.render("receitas", {recipe})
+    return res.render("receita", {recipe})
 }
 //================================================
 exports.recipesUsers = function(req, res) { // ok
