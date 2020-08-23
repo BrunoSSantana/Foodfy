@@ -15,13 +15,13 @@
   <a href="#tecnologias">Tecnologias</a>
 </p>
 
-## 🗞 O Projeto
+## :bookmark: Sobre
 A ideia principal deste projeto é disponibilizar diversas receitas caseiras e até mesmo por profissionais para o público em geral de forma gratuita, apenas pelo simples fato de compartilhas ideias e conhecimentos.
 
 ## <a name="introduction"></a>📖 Introdução
 O intuito inicial é cadastrar receitas com os ingredintes, modo de preparo, uma foto com a representação do prato feito e algumas informações adicionais, como informações específicas de preparo da receita, além do nome do autor, ainda que este seja fictício.
 
-## 💻 Tecnologias
+## :package: Tecnologias
 Até o presente momento foram usadas as seguintes tecnologias para a elaboradas deste projeto:
 * HTML
 * CSS
@@ -52,6 +52,21 @@ Atualmente ainda não é possível realizar o cadastro de receitas, toda via, a 
 <p align="center" > <em> Estado atual da aplicação</em></p>
 <p align="center" ><img alt="app.Foodfy" src="https://media.giphy.com/media/XBuOBRxlEZAB35R13d/giphy.gif"></img></p>
 
-## 🧾 LICENÇA
-Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](/LICENSE) para mais detalhes.
-***
+ ## :speech_balloon: Contato
+ Bruno Santana - [@BrunoSSantanas](https://twitter.com/BrunoSSantanas) - [brunoosouzas@hotmail.com](mailto:m.bluth@example.com)
+ 
+ ## :page_facing_up: Linceça
+ Distribuído sob a licença MIT. Consulte [LICENSE](https://opensource.org/licenses/MIT) para obter mais informações.
+ 
+ ## :green_heart: Reconhecimentos
+ 
+- [Como criar um RADME | by Daniele Leao Evangelista](https://www.youtube.com/watch?v=Gcb60rPbnKA&t=554s)
+- [O que todo projeto deveria ter? #01 | by Mario Solto (Dev Soltinho)](https://www.youtube.com/watch?v=yMRSDdifGW8&t=1107s)
+- [Gitmoji](https://gitmoji.carloscuesta.me/)
+- [Font Awesome](https://fontawesome.com)
+- [Img Shields](https://shields.io)
+- [BEST README TEMPLATE](https://github.com/othneildrew/Best-README-Template)
+
+---
+
+:triangular_flag_on_post: By [Bruno Santana](https://github.com/BrunoSSantana)
