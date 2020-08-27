@@ -46,15 +46,22 @@
 
     <div class="input" id="preparations">
         <h3>Modo de preparo</h3>
-        {# {% for preparation in recipe.preparation %} #}
-        <div class="preparation">
-            <input 
-            type="text"
-            value="{{preparation}}"
-            placeholder="preparation"
-            name="preparation[]"/>
-        </div>
-        {# {% endfor %} #}
+        {% if recipe.preparation %}
+            {% for preparation in recipe.preparation %}
+                <div class="preparation">
+                    <input 
+                    type="text"
+                    value="{{preparation}}"
+                    placeholder="preparation"
+                    name="preparation[]"/>
+                </div>
+            {% endfor %}
+        
+        {% else %}
+            <div class="input" id="preparations">
+                <input type="text" name="preparations[]" value="" placeholder="preparations" />
+            </div>
+        {% endif %}
     </div>
     <button class="add-preparation" type="button">Adicionar nova etapa</button>
 

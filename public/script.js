@@ -4,7 +4,7 @@ const pratos = document.querySelectorAll('.prato')
 for ( let prato of pratos) {
     prato.addEventListener("click", function () {
         const receita = prato.getAttribute("id")
-        window.location.href = `/admin/recipes/${receita}`
+        window.location.href = `/receitas/${receita}`
         console.log("OPA")
     })
 }
