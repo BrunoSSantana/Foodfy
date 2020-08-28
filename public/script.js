@@ -76,7 +76,7 @@ document
   .addEventListener("click", addPreparation);
 //=====================================================
 //Confirmando exclusão da receita
-const formDelete = document.querySelector(".form-delete")
+const formDelete = document.querySelector("#my-form")
 formDelete.addEventListener("submit", function(event) {
     const confirmation = confirm("Deseja deletar?")
     if (!confirmation){
