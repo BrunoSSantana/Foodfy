@@ -276,6 +276,7 @@ footer {
 .banner p {
     margin-top: 4px;
     font-size: 20px;
+    color: #777777;
 }
 .description {
     width: 940px;
@@ -286,27 +287,11 @@ footer {
     margin-bottom: 20px;
     margin-top: 20px;
 }
-.description p {
-    font-size: 18px;
-    font-weight: 400;
-    color: #444444;
-}
 
 .partial {
     display: flex;
     flex-direction: column;
 }
-/* .partial button {
-    margin-left: 8px;
-    text-transform: uppercase;
-    font-size: 12px;
-    font-weight: 700;
-    background-color: white;
-    color: #999999;
-    border: none;
-    justify-content: center;
-    cursor: pointer;
-} */
 
 .head {
     display: flex;
@@ -336,15 +321,25 @@ li {
 /* header */
 
 .header {
-    display: block;
+    display: flex;
     background-color: #111111;
 }
-.header div {
+.header div:first-child {
+    display: flex;
+    align-items: center;
     width: 940px;
     margin: 0 auto;
+    /* background: #fff111; */
 }
 .header img {
-    margin: 25px auto;
+    margin: 26.5px 50px 26.5px 0;
+}
+.header div div a{
+    margin-right: 30px;
+    
+    font-weight: bold;
+    font-size: 15px;
+    text-transform: uppercase;
 }
 /* corpo */
 .content-body {
@@ -375,13 +370,23 @@ li {
 }
 
 .details.banner button,
-.content-body button {
+.content-header button {
     background-color: #6558C3;
     border: none;
     padding: 8px 18px;
     border-radius: 4px;
     font-weight: bold;
     color: white;
+}
+.add-ingredient,
+.add-preparation {
+    background: none;
+
+    border: none;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-weight: bold;
+    color: #6558C3;
 }
 .content-body .content-header {
     display: flex;
@@ -410,6 +415,12 @@ li {
 .details.banner button {
     height: 35px;
 }
+#ingredientes li,
+.partials p {
+    color: #777777;
+    font-size: 18px;
+}
+
 /* listing */
 
 .listing {
