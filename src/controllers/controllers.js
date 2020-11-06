@@ -4,7 +4,7 @@ const fs = require('fs')
 /* === Admin === */ 
 
 exports.recipes = function(req, res) { // ok
-    return res.render('admin/listing', {recipes: data.recipe})
+    return res.render('admin/recipes/listing', {recipes: data.recipe})
 }
 //================================================
 exports.show = function(req, res) { //ok
@@ -17,11 +17,11 @@ exports.show = function(req, res) { //ok
             return res.send(`Receita não encontrada`)
         }
     })
-    return res.render("admin/details", {recipe})
+    return res.render("admin/recipes/details", {recipe})
 }
 //================================================
 exports.create = function(req, res) {
-    return res.render('admin/create')
+    return res.render('admin/recipes/create')
 }
 //================================================
 exports.post = function(req, res) { //ok
@@ -65,7 +65,7 @@ exports.edit = function(req, res) {
         }
     })
 
-    return res.render("admin/edit", {recipe: receita})
+    return res.render("admin/recipes/edit", {recipe: receita})
 }
 //================================================
 exports.put = function(req, res) {
