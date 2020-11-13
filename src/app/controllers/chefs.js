@@ -3,25 +3,25 @@ const fs = require('fs')
 
 /* === Admin === */ 
 
-exports.recipes = function(req, res) { // ok
-    return res.render('admin/recipes/listing', {recipes: data.recipe})
+exports.chefs = function(req, res) { // ok
+    return res.render('admin/chefs/listing', {chefs: data.chef})
 }
 //================================================
 exports.show = function(req, res) { //ok
     const id = req.params.id
 
-    const recipe = data.recipe.find( function(receita) {
+    const chef = data.chef.find( function(receita) {
         if(receita.id == id){
             return true
         } else if(!receita){
             return res.send(`Receita não encontrada`)
         }
     })
-    return res.render("admin/recipes/details", {recipe})
+    return res.render("admin/chefs/details", {chef})
 }
 //================================================
 exports.create = function(req, res) {
-    return res.render('admin/recipes/create')
+    return res.render('admin/chefs/create')
 }
 //================================================
 exports.post = function(req, res) { //ok
@@ -36,7 +36,7 @@ exports.post = function(req, res) { //ok
     let {title, image, ingredients, preparation, information, author} = req.body
     const id = Number(data.length + 1)
 
-    datas.recipe.push({
+    datas.chef.push({
         image,
         title,
         id,
@@ -49,7 +49,7 @@ exports.post = function(req, res) { //ok
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
         if (err) return res.send('Write file err')
 
-        return res.redirect("/admin/recipes", {recipe: data.recipes})
+        return res.redirect("/admin/chefs", {chef: data.chefs})
     })
 
 }
@@ -57,7 +57,7 @@ exports.post = function(req, res) { //ok
 exports.edit = function(req, res) {
     const {id} = req.params
 
-    const receita = data.recipe.find((receita)=>{
+    const receita = data.chef.find((receita)=>{
         if(receita.id == id) {
             return true
         } else if(!receita) {
@@ -65,7 +65,7 @@ exports.edit = function(req, res) {
         }
     })
 
-    return res.render("admin/recipes/edit", {recipe: receita})
+    return res.render("admin/chefs/edit", {chef: receita})
 }
 //================================================
 exports.put = function(req, res) {
@@ -82,44 +82,44 @@ exports.put = function(req, res) {
         }
     }
 
-    const foundrecipe = data.recipe.find(founfor)
+    const foundchef = data.chef.find(founfor)
 
-    const recipe = {
-        ...foundrecipe,
+    const chef = {
+        ...foundchef,
         ...req.body,
         id: Number(req.body.id)
     }
 
-    data.recipe[index] = recipe
+    data.chef[index] = chef
 
 
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
         if (err) return res.send('Write file err')
 
-    return res.redirect(`/admin/recipes/${id}`)//err express res.redirect
+    return res.redirect(`/admin/chefs/${id}`)//err express res.redirect
     })
 }
 //================================================
 exports.delete = function(req, res) {
     const {id} = req.body
 
-    const filterrecipes = data.recipe.filter(function(recipe){
-        return recipe.id != id
+    const filterchefs = data.chef.filter(function(chef){
+        return chef.id != id
     })
 
-    data.recipe = filterrecipes
+    data.chef = filterchefs
 
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
         if(err) return res.send("Erro na execução do processo")
 
-        return res.redirect("/admin/recipes/")
+        return res.redirect("/admin/chefs/")
     })
 }
 
 /* === Users === */ 
 
 exports.home = function(req, res) { //ok
-    return res.render('home', {recipes: data.recipe})
+    return res.render('home', {chefs: data.chef})
 }
 //================================================
 exports.about = function(req, res) { //ok
@@ -129,16 +129,16 @@ exports.about = function(req, res) { //ok
 exports.showUsers = function(req, res) { //ok
     const id = req.params.id
 
-    const recipe = data.recipe.find( function(receita) {
+    const chef = data.chef.find( function(receita) {
         if(receita.id == id){
             return true
         } else if(!receita){
             return res.send(`Receita não encontrada`)
         }
     })
-    return res.render("receita", {recipe})
+    return res.render("receita", {chef})
 }
 //================================================
-exports.recipesUsers = function(req, res) { // ok
-    return res.render('receitas', {recipe: data.recipe})
+exports.chefsUsers = function(req, res) { // ok
+    return res.render('receitas', {chef: data.chef})
 }

@@ -8,7 +8,7 @@
 
     <form class="content-body" method="POST" action="/admin/recipes?_method=PUT">
         <div class="content-header">
-            <h2>Editar Receita</h2>
+            <h2>Edit Recipe</h2>
             <div class="submit">
                 <button id="form-delete" type="submit" form="my-form">Deletar</button>
                 <button type="submit">Salvar receita</button>
@@ -21,7 +21,7 @@
     <form id="my-form" method="POST" action="/admin/recipes?_method=DELETE">
 
         <input type="hidden" name="id" value={{recipe.id}}>
-        <button type="submit">Deletar</button>
+        <button type="submit">Delete</button>
     
     </form>
 {% endblock %}

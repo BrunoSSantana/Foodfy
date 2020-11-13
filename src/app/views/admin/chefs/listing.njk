@@ -10,13 +10,13 @@
 </div>
 <div class="listing">
 
-{% for recipe in recipes %}
-    <div class="recipe">
-        <img src="{{recipe.image}}" alt="">
+{% for chef in chefs %}
+    <div class="chef">
+        <img src="{{chef.image}}" alt="">
         <div>
-            <h3>{{recipe.title}}</h3>
-            <p>por {{recipe.author}}</p>
-            <a href="/admin/recipes/{{recipe.id}}">Visualizar</a>
+            <h3>{{chef.title}}</h3>
+            <p>por {{chef.author}}</p>
+            <a href="/admin/chefs/{{chef.id}}">Visualizar</a>
         </div>
     </div>
 {% endfor %}
