@@ -1,6 +1,6 @@
 const express = require('express')
 const nunjucks = require('nunjucks')
-const routes = require('./src/routes/routes')
+const routes = require('./routes/routes')
 const methodOverride = require('method-override')//respossável por adicionar os métodos put e delete
 
 const server = express()
@@ -12,7 +12,7 @@ server.use(routes)
 
 server.set("view engine", "njk")
 
-nunjucks.configure("views", {
+nunjucks.configure("src/app/views", {
     express: server,
     autoescape: false,
     noCache: true

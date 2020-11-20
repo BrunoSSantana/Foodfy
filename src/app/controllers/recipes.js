@@ -2,21 +2,21 @@ const recipe = require('../modules/recipe')
 
 module.exports = {
     /* ----Admin----*/ 
-    recipes(req, res) { // ok
+    recipes(req, res) {//ok
         recipe.all(function(recipes){
             return res.render('admin/recipes/listing', {recipes: recipes})
         })
     },
-    show(req, res) { //ok
+    show(req, res) {//ok
         recipe.find(req.body.id, function(recipe){
             if(!recipe) return res.send('Student not Found')
             return res.render("admin/recipes/details", {recipe:recipe})
         })
     },
-    create(req, res) {
+    create(req, res) {//ok
         return res.render('admin/recipes/create')
     },
-    post(req, res) { //ok
+    post(req, res) {//ok
         const keys = Object.keys(req.body)
         
         for (key of keys) {
@@ -30,7 +30,7 @@ module.exports = {
         })
     
     },
-    edit(req, res) {
+    edit(req, res) {//ok
         const {id} = req.params
     
         recipe.find(req.params.id, function(recipe){
@@ -39,7 +39,7 @@ module.exports = {
             return res.render("admin/recipes/edit", {recipe: recipe})
         })    
     },
-    put(req, res) {
+    put(req, res) {//ok
 
         const keys = Object.keys(req.body)
         
@@ -53,41 +53,28 @@ module.exports = {
             return res.redirect(`students/${req.body.id}`)
         })
     },
-    delete(req, res) {
-        const {id} = req.body
-    
-        const filterrecipes = data.recipe.filter(function(recipe){
-            return recipe.id != id
-        })
-    
-        data.recipe = filterrecipes
-    
-        fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
-            if(err) return res.send("Erro na execução do processo")
-    
-            return res.redirect("/admin/recipes/")
+    delete(req, res) {//pk
+        recipe.delete(req.body.id, function(){
+            return res.redirect('/recipes')
         })
     },
     /*----Users----*/ 
-    home(req, res) { //ok
-        return res.render('home', {recipes: data.recipe})
+    home(req, res) {//ok
+        recipe.all(function(recipes){
+            return res.render('home', {recipes: recipes})
+        })
     },
-    about(req, res) { //ok
+    about(req, res) {//ok
         return res.render('sobre')
     },
-    showUsers(req, res) { //ok
-        const id = req.params.id
-    
-        const recipe = data.recipe.find( function(receita) {
-            if(receita.id == id){
-                return true
-            } else if(!receita){
-                return res.send(`Receita não encontrada`)
-            }
+    showUsers(req, res) {//ok
+        recipe.find(req.params.id, function(recipe){
+            return res.render("receita", {recipe: recipe})
         })
-        return res.render("receita", {recipe})
     },
-    recipesUsers(req, res) { // ok
-        return res.render('receitas', {recipe: data.recipe})
+    recipesUsers(req, res) {//ok
+        recipe.all(function(recipes){
+            return res.render('home', {recipes: recipes})
+        })
     }
 }
