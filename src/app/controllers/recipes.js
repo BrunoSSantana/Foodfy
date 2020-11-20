@@ -74,7 +74,8 @@ module.exports = {
     },
     recipesUsers(req, res) {//ok
         recipe.all(function(recipes){
-            return res.render('home', {recipes: recipes})
+            
+            return res.render('receitas', {recipes: recipes})
         })
     }
 }

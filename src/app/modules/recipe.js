@@ -14,21 +14,21 @@ module.exports = {
             INSERT INTO recipes (
                 chef_id,
                 image,
-                title,
                 ingredients,
                 preparation,
                 information,
-                created_at
+                title,
+                create_at
             ) VALUES ($1, $2,$3, $4, $5, $6, $7)
             RETURNING id`
 
         const values = [
             data.chef_id,
             data.image,
-            data.title,
             data.ingredients,
             data.preparation,
             data.information,
+            data.title,
             date(Date.now()).iso
         ]
 
@@ -42,7 +42,7 @@ module.exports = {
         db.query(`
         SELECT recipes.*
         FROM recipes
-        WHERE recipes.id = $1`, function(err, results){
+        WHERE recipes.id = $1`,[id], function(err, results){
             if(err) throw `Database FIND Error! ${err}`
 
             callback(results.rows[0])

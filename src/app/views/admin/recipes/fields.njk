@@ -19,7 +19,7 @@
         <h3>Chef</h3>
         <input 
         type="text" 
-        name="chef"
+        name="chef_id"
         value="{{recipe.chef}}"/>
     </div>
 
@@ -28,12 +28,13 @@
         {% if recipe.ingredients %}
             {% for ingredient in recipe.ingredients %}
                 <div class="ingredient">
-                <input 
-                type="text"
-                name="ingredients[]"
-                value="{{ingredient}}"
-                placeholder="Ingredient" />
-         </div>
+                    <input 
+                        type="text"
+                        name="ingredients[]"
+                        value="{{ingredient}}"
+                        placeholder="Ingredient"
+                    />
+                </div>
             {% endfor %}
         
         {% else %}
@@ -50,15 +51,16 @@
             {% for preparation in recipe.preparation %}
                 <div class="preparation">
                     <input 
-                    type="text"
-                    value="{{preparation}}"
-                    placeholder="preparation"
-                    name="preparation[]"/>
+                        type="text"
+                        name="preparation[]"
+                        value="{{preparation}}"
+                        placeholder="preparation"
+                    />
                 </div>
             {% endfor %}
         
         {% else %}
-            <div class="input" id="preparations">
+            <div class="preparations" id="preparation">
                 <input type="text" name="preparations[]" value="" placeholder="preparations" />
             </div>
         {% endif %}
