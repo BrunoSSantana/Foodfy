@@ -6,8 +6,8 @@ const chefs = require('../app/controllers/chefs')
 //== site
 
 routes.get("/", recipes.home) //ok
-routes.get("/receitas", recipes.recipesUsers) //ok
-routes.get("/receitas/:id", recipes.showUsers) //ok
+routes.get("/recipes", recipes.recipesUsers) //ok
+routes.get("/recipes/:id", recipes.showUsers) //ok
 routes.get("/sobre", recipes.about) //ok
 
 //== adm
