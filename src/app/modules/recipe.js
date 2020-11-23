@@ -41,7 +41,7 @@ module.exports = {
     },
     find(id, callback){
         db.query(`
-        SELECT recipes.*
+        SELECT *
         FROM recipes
         WHERE recipes.id = $1`,[id], function(err, results){
             if(err) throw `Database FIND Error! ${err}`

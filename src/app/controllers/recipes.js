@@ -8,8 +8,8 @@ module.exports = {
         })
     },
     show(req, res) {//ok
-        recipe.find(req.body.id, function(recipe){
-            if(!recipe) return res.send('Student not Found')
+        recipe.find(req.params.id, function(recipe){
+            if(!recipe) return res.send('Recipe not Found')
             return res.render("admin/recipes/details", {recipe:recipe})
         })
     },
